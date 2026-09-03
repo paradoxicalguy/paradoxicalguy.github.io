@@ -1,242 +1,228 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#060708" />
-  <meta name="description" content="abhinav srivastav — systems and compiler engineer working on rust toolchain reproducibility, rustc, llvm, debug info, bootstrap, and arm64." />
-  <meta property="og:title" content="abhinav srivastav — systems / compilers" />
-  <meta property="og:description" content="compiler internals, reproducible toolchains, debug info, native builds, and systems work." />
-  <meta property="og:type" content="website" />
-  <title>abhinav srivastav — systems / compilers</title>
-  <link rel="stylesheet" href="style.css?v=cyberpunk-1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <meta name="description" content="abhinav srivastav — compilers, reproducible rust toolchains, debug info, bootstrap, and arm64.">
+  <title>abhinav srivastav // compilers</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="quasar.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">skip to content</a>
+  <a class="skip" href="#main">skip to content</a>
 
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="abhinav srivastav, home">
-      <span class="wordmark-mark" aria-hidden="true">[//]</span>
-      <span>paradoxicalguy</span>
-    </a>
-
-    <nav class="nav" aria-label="primary navigation">
+  <header class="topbar">
+    <a class="mark" href="#top" aria-label="home">paradoxicalguy<span>//</span></a>
+    <nav aria-label="primary navigation">
       <a href="#work">work</a>
       <a href="#projects">projects</a>
-      <a href="#about">about</a>
+      <a href="#method">method</a>
       <a href="#contact">contact</a>
     </nav>
-
-    <div class="header-status" aria-label="site status">
-      <span class="status-dot" aria-hidden="true"></span>
-      online
-    </div>
+    <span class="signal"><i aria-hidden="true"></i>online</span>
   </header>
 
   <main id="main">
-    <section class="hero section" id="top">
+    <section class="hero" id="top">
+      <div class="hero-index" aria-hidden="true">00</div>
       <div class="hero-copy">
-        <p class="eyebrow">systems / compilers / software infrastructure</p>
-        <h1>i trace software<br />all the way down.</h1>
-        <p class="hero-lede">
-          i’m <strong>abhinav srivastav</strong>. i work on compiler and toolchain problems where the useful answer is usually hiding somewhere between source code and the final bytes on disk.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">view selected work <span aria-hidden="true">↓</span></a>
-          <a class="button" href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">github <span aria-hidden="true">↗</span></a>
+        <p class="kicker">rustc // llvm // arm64</p>
+        <h1>i follow build inputs<br>until they become bytes.</h1>
+        <p class="lede">i’m abhinav srivastav. i work around compilers and toolchains, mostly where source paths, build systems, debug info, and native code quietly change the final artifact.</p>
+        <div class="hero-links">
+          <a href="#work">selected work <span>↓</span></a>
+          <a href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">github <span>↗</span></a>
         </div>
       </div>
-
-      <aside class="system-card" aria-label="technical profile">
-        <div class="system-card-head">
-          <span>profile.sys</span>
-          <span class="system-state">active</span>
-        </div>
-        <dl class="system-list">
-          <div><dt>focus</dt><dd>rustc / reproducibility / native builds</dd></div>
-          <div><dt>stack</dt><dd>rust / c / c++ / llvm / arm64</dd></div>
-          <div><dt>formats</dt><dd>dwarf / codeview / elf / pe / rlib</dd></div>
-          <div><dt>work</dt><dd>compiler internals / bootstrap / debug info</dd></div>
-          <div><dt>mode</dt><dd>trace the bytes. explain the difference.</dd></div>
+      <div class="hero-side" aria-label="technical focus">
+        <p>current vector</p>
+        <dl>
+          <div><dt>focus</dt><dd>rust toolchain reproducibility</dd></div>
+          <div><dt>layers</dt><dd>bootstrap / rustc / llvm / native c</dd></div>
+          <div><dt>artifacts</dt><dd>rlib / dwarf / codeview / pe / elf</dd></div>
+          <div><dt>target</dt><dd>linux / windows / arm64</dd></div>
         </dl>
-        <div class="system-prompt"><span>&gt;</span> build --reproducible<span class="cursor" aria-hidden="true">_</span></div>
-      </aside>
+      </div>
     </section>
 
-    <section class="proof-strip" aria-label="portfolio highlights">
-      <div><strong>8</strong><span>merged rust-lang/rust prs</span></div>
-      <div><strong>linux + windows</strong><span>cross-platform toolchain work</span></div>
-      <div><strong>rustc</strong><span>bootstrap / debuginfo / reproducibility</span></div>
-      <div><strong>arm64</strong><span>compiler + low-level experiments</span></div>
+    <section class="manifesto" aria-label="approach">
+      <p>build twice.</p>
+      <p>diff the artifact.</p>
+      <p>find the first unstable input.</p>
     </section>
 
-    <section class="section work-section" id="work">
-      <div class="section-heading">
+    <section class="section" id="work">
+      <div class="section-head">
+        <p class="section-no">01</p>
         <div>
-          <p class="eyebrow">01 / selected systems work</p>
-          <h2>small diffs.<br />deep causes.</h2>
+          <p class="kicker">selected rust work</p>
+          <h2>less environment.<br>more determinism.</h2>
         </div>
-        <p>most of my recent work starts with a deceptively simple question: why did two equivalent builds produce different artifacts?</p>
       </div>
 
-      <div class="case-grid">
-        <article class="case-card case-card-featured">
-          <div class="case-meta">
-            <div class="chips"><span>rustc</span><span>bootstrap</span><span>llvm</span></div>
-            <span class="case-index">case 01</span>
+      <div class="work-list">
+        <article class="work-item">
+          <div class="work-meta">
+            <span>path remapping</span>
+            <span>merged</span>
           </div>
-          <h3>making rust toolchain builds less path-dependent</h3>
-          <p class="case-summary">tracked absolute build paths through crate metadata and native c/c++ debug info, then added targeted remapping at the points where those paths escaped existing coverage.</p>
-          <div class="case-flow" aria-label="path leakage investigation flow">
-            <span>out_dir</span><b>→</b><span>metadata</span><b>→</b><span>debug info</span><b>→</b><span>artifact hash</span>
+          <div class="work-copy">
+            <h3>stop checkout paths from becoming artifact identity.</h3>
+            <p>remapped bootstrap output paths before they reached crate metadata, covered windows-style paths, and carried debug-prefix remapping into native c/c++ compilation where rust-only remapping could not reach.</p>
+            <div class="work-links">
+              <a href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noreferrer">#155935 ↗</a>
+              <a href="https://github.com/rust-lang/rust/pull/156186" target="_blank" rel="noreferrer">#156186 ↗</a>
+              <a href="https://github.com/rust-lang/rust/pull/156504" target="_blank" rel="noreferrer">#156504 ↗</a>
+              <a href="https://github.com/rust-lang/rust/pull/159673" target="_blank" rel="noreferrer">#159673 ↗</a>
+            </div>
           </div>
-          <ul class="case-points">
-            <li>remapped bootstrap <code>out_dir</code> into a stable virtual prefix.</li>
-            <li>forwarded debug-prefix remapping into native c/c++ builds used by <code>rustc_llvm</code>.</li>
-            <li>handled windows-style path forms and <code>cc</code> compiler detection gaps.</li>
-          </ul>
-          <div class="case-links">
-            <a href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noreferrer">#155935 ↗</a>
-            <a href="https://github.com/rust-lang/rust/pull/156186" target="_blank" rel="noreferrer">#156186 ↗</a>
-            <a href="https://github.com/rust-lang/rust/pull/156504" target="_blank" rel="noreferrer">#156504 ↗</a>
-            <a href="https://github.com/rust-lang/rust/pull/159673" target="_blank" rel="noreferrer">#159673 ↗</a>
+          <div class="work-diagram" aria-hidden="true">
+            <span>path</span><i></i><span>metadata</span><i></i><span>debug</span><i></i><span>bytes</span>
           </div>
         </article>
 
-        <article class="case-card">
-          <div class="case-meta">
-            <div class="chips"><span>testing</span><span>debuginfo</span></div>
-            <span class="case-index">case 02</span>
+        <article class="work-item">
+          <div class="work-meta">
+            <span>repro tests</span>
+            <span>merged</span>
           </div>
-          <h3>reproducibility coverage that checks the artifacts we actually ship</h3>
-          <p class="case-summary">strengthened run-make coverage around reproducible builds instead of relying on narrower historical assumptions.</p>
-          <ul class="case-points">
-            <li>re-enabled binary reproducibility testing with full debug info on linux after validating the old regression no longer reproduced.</li>
-            <li>generalized stdlib path-remapping coverage from one <code>libstd.rlib</code> to all distributed <code>.rlib</code> artifacts.</li>
-          </ul>
-          <div class="case-links">
-            <a href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noreferrer">#151517 ↗</a>
-            <a href="https://github.com/rust-lang/rust/pull/156570" target="_blank" rel="noreferrer">#156570 ↗</a>
+          <div class="work-copy">
+            <h3>test the artifacts that actually leave the build.</h3>
+            <p>re-enabled reproducible binary coverage with full debug info on linux and expanded stdlib path-remapping checks from a single rlib to the distributed rlib set.</p>
+            <div class="work-links">
+              <a href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noreferrer">#151517 ↗</a>
+              <a href="https://github.com/rust-lang/rust/pull/156570" target="_blank" rel="noreferrer">#156570 ↗</a>
+            </div>
+          </div>
+          <div class="work-diagram" aria-hidden="true">
+            <span>build a</span><i></i><span>hash</span><b>=</b><span>hash</span><i></i><span>build b</span>
           </div>
         </article>
 
-        <article class="case-card">
-          <div class="case-meta">
-            <div class="chips"><span>windows</span><span>msvc</span><span>codeview</span></div>
-            <span class="case-index">case 03</span>
+        <article class="work-item">
+          <div class="work-meta">
+            <span>windows / msvc</span>
+            <span>merged + active</span>
           </div>
-          <h3>deterministic windows artifacts</h3>
-          <p class="case-summary">followed windows-specific non-determinism through pe timestamps, codeview records, compiler-rt object names, and archive construction.</p>
-          <ul class="case-points">
-            <li>applied <code>/brepro</code> specifically to bootstrap-built rustc artifacts on msvc and added a regression test.</li>
-            <li>investigated multiple compiler-rt path leaks; active work makes generated objects and archives independent of checkout directory.</li>
-          </ul>
-          <div class="case-links">
-            <a href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noreferrer">#158873 · merged ↗</a>
-            <a href="https://github.com/rust-lang/rust/pull/157914" target="_blank" rel="noreferrer">#157914 · active ↗</a>
+          <div class="work-copy">
+            <h3>make windows builds care less about where they happened.</h3>
+            <p>applied /brepro to bootstrap-built msvc artifacts with regression coverage. related compiler-rt archive work continues around object names, codeview records, and output-path sensitivity.</p>
+            <div class="work-links">
+              <a href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noreferrer">#158873 · merged ↗</a>
+              <a href="https://github.com/rust-lang/rust/pull/157914" target="_blank" rel="noreferrer">#157914 · open ↗</a>
+            </div>
+          </div>
+          <div class="work-diagram" aria-hidden="true">
+            <span>msvc</span><i></i><span>codeview</span><i></i><span>archive</span><i></i><span>pe</span>
           </div>
         </article>
+      </div>
+
+      <div class="ledger-head">
+        <p>rust-lang/rust contribution log</p>
+        <p><strong>8 merged</strong> // <strong>1 open</strong></p>
+      </div>
+      <div class="ledger">
+        <a href="https://github.com/rust-lang/rust/pull/159673" target="_blank" rel="noreferrer"><span>159673</span><strong>forward debug-prefix mapping when bootstrap resolves the c compiler to cc</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noreferrer"><span>158873</span><strong>apply /brepro in bootstrap on msvc with a run-make regression test</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/157914" target="_blank" rel="noreferrer"><span>157914</span><strong>make compiler-rt archives reproducible on windows</strong><em>open</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/156570" target="_blank" rel="noreferrer"><span>156570</span><strong>extend stdlib remap-path coverage to all distributed rlibs</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/156504" target="_blank" rel="noreferrer"><span>156504</span><strong>remap windows-style out_dir paths in bootstrap</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/156186" target="_blank" rel="noreferrer"><span>156186</span><strong>remap ci-llvm debug paths with file-prefix mapping</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noreferrer"><span>155935</span><strong>remap out_dir leakage in crate metadata</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noreferrer"><span>151517</span><strong>enable reproducible binary builds with debug info on linux</strong><em>merged</em></a>
+        <a href="https://github.com/rust-lang/rust/pull/150368" target="_blank" rel="noreferrer"><span>150368</span><strong>add ordering support to minicore for a no_core codegen test</strong><em>merged</em></a>
       </div>
     </section>
 
-    <section class="section ledger-section" aria-labelledby="ledger-title">
-      <div class="section-heading compact">
-        <p class="eyebrow">02 / contribution log</p>
-        <h2 id="ledger-title">merged into rust-lang/rust.</h2>
-      </div>
-
-      <div class="ledger" role="list">
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/159673" target="_blank" rel="noreferrer"><span class="ledger-date">jul 26</span><span class="ledger-id">#159673</span><strong>forward -fdebug-prefix-map when using cc</strong><span class="ledger-area">bootstrap</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/156570" target="_blank" rel="noreferrer"><span class="ledger-date">jul 27</span><span class="ledger-id">#156570</span><strong>extend remap-path-prefix-std to all stdlib rlibs</strong><span class="ledger-area">tests</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noreferrer"><span class="ledger-date">jul 27</span><span class="ledger-id">#158873</span><strong>apply /brepro in bootstrap on msvc + regression test</strong><span class="ledger-area">windows</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/156504" target="_blank" rel="noreferrer"><span class="ledger-date">may 13</span><span class="ledger-id">#156504</span><strong>remap windows-style out_dir paths</strong><span class="ledger-area">bootstrap</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/156186" target="_blank" rel="noreferrer"><span class="ledger-date">may 06</span><span class="ledger-id">#156186</span><strong>remap ci-llvm debug paths via -ffile-prefix-map</strong><span class="ledger-area">llvm</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noreferrer"><span class="ledger-date">apr 30</span><span class="ledger-id">#155935</span><strong>remap out_dir path leakage in crate metadata</strong><span class="ledger-area">bootstrap</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noreferrer"><span class="ledger-date">jan 24</span><span class="ledger-id">#151517</span><strong>enable reproducible binary builds with debuginfo on linux</strong><span class="ledger-area">tests</span><span>↗</span></a>
-        <a class="ledger-row" role="listitem" href="https://github.com/rust-lang/rust/pull/150368" target="_blank" rel="noreferrer"><span class="ledger-date">jan 11</span><span class="ledger-id">#150368</span><strong>add ordering to minicore for a no_core codegen test</strong><span class="ledger-area">compiler</span><span>↗</span></a>
-      </div>
-    </section>
-
-    <section class="section projects-section" id="projects">
-      <div class="section-heading">
+    <section class="section projects" id="projects">
+      <div class="section-head">
+        <p class="section-no">02</p>
         <div>
-          <p class="eyebrow">03 / projects</p>
-          <h2>built from first principles.</h2>
+          <p class="kicker">projects</p>
+          <h2>small systems.<br>no hidden magic.</h2>
         </div>
-        <p>small enough to reason about end-to-end; low-level enough that the abstractions stay visible.</p>
       </div>
+
+      <a class="project-feature" href="https://github.com/paradoxicalguy/compiler-v2" target="_blank" rel="noreferrer">
+        <div>
+          <p class="kicker">quasar v2 // rust // arm64</p>
+          <h3>a deliberately small compiler.</h3>
+          <p>a c-like language compiled through explicit lexer, parser, semantic analysis, optimizer, and arm64 code generation phases, then assembled for aarch64 and run through qemu.</p>
+        </div>
+        <div class="pipeline" aria-label="quasar compiler pipeline">
+          <span>source</span><i></i><span>lex</span><i></i><span>parse</span><i></i><span>sema</span><i></i><span>opt</span><i></i><span>a64</span>
+        </div>
+        <span class="arrow">↗</span>
+      </a>
 
       <div class="project-grid">
-        <a class="project-card project-card-large" href="https://github.com/paradoxicalguy/compiler-v2" target="_blank" rel="noreferrer">
-          <span class="project-number">project 01</span>
-          <div class="project-content"><p class="project-kicker">rust / compiler / arm64</p><h3>quasar v2</h3><p>a deliberately small c-like compiler with explicit lexer, parser, ast, semantic analysis, optimizer, arm64 codegen, cross-architecture execution through qemu, and per-phase benchmarking.</p></div>
-          <div class="pipeline-mini" aria-label="compiler pipeline"><span>lex</span><i></i><span>parse</span><i></i><span>sema</span><i></i><span>opt</span><i></i><span>a64</span></div>
-          <span class="project-arrow">↗</span>
+        <a href="https://github.com/paradoxicalguy/rust-ffs" target="_blank" rel="noreferrer">
+          <span>rust</span>
+          <h3>rust-ffs</h3>
+          <p>a forensic file system project for learning and exploring storage internals.</p>
+          <b>↗</b>
         </a>
-
-        <a class="project-card" href="https://github.com/paradoxicalguy/cli-todo" target="_blank" rel="noreferrer">
-          <span class="project-number">project 02</span>
-          <div class="project-content"><p class="project-kicker">rust / cli</p><h3>cli-todo</h3><p>a small command-line todo application built in rust without leaning on serde or clap.</p></div>
-          <span class="project-arrow">↗</span>
+        <a href="https://github.com/paradoxicalguy/asm-arm64-scripts" target="_blank" rel="noreferrer">
+          <span>assembly</span>
+          <h3>arm64 scripts</h3>
+          <p>small experiments around arithmetic, operators, shifts, rotates, and direct arm64 work.</p>
+          <b>↗</b>
         </a>
-
-        <a class="project-card" href="https://github.com/paradoxicalguy/orderbook" target="_blank" rel="noreferrer">
-          <span class="project-number">project 03</span>
-          <div class="project-content"><p class="project-kicker">rust / data structures</p><h3>orderbook</h3><p>an order book implementation that records orders, matches, sales, and trades.</p></div>
-          <span class="project-arrow">↗</span>
+        <a href="https://github.com/paradoxicalguy/cli-todo" target="_blank" rel="noreferrer">
+          <span>rust</span>
+          <h3>cli-todo</h3>
+          <p>a command-line todo built without serde or clap.</p>
+          <b>↗</b>
         </a>
-
-        <a class="project-card" href="https://github.com/paradoxicalguy/asm-arm64-scripts" target="_blank" rel="noreferrer">
-          <span class="project-number">project 04</span>
-          <div class="project-content"><p class="project-kicker">assembly / arm64</p><h3>arm64 scripts</h3><p>low-level experiments around arithmetic, operators, shifts, rotates, and direct-mode arm64 work.</p></div>
-          <span class="project-arrow">↗</span>
+        <a href="https://github.com/paradoxicalguy/orderbook" target="_blank" rel="noreferrer">
+          <span>rust</span>
+          <h3>orderbook</h3>
+          <p>an order book that records adds, sells, matches, and trades.</p>
+          <b>↗</b>
         </a>
       </div>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="about-statement">
-        <p class="eyebrow">04 / about</p>
-        <blockquote>“i like finding out why software behaves the way it does.”</blockquote>
-      </div>
-      <div class="about-copy">
-        <p>i’m most at home around compilers, toolchains, binary formats, assembly, and the infrastructure that turns source into artifacts people can trust.</p>
-        <p>rust is my primary language, but the interesting bugs rarely respect language boundaries: they cross into c/c++, linker behavior, debug formats, build systems, filesystem paths, and ci.</p>
-        <p>i also write about what i’m learning — especially when building something from scratch is the clearest way to understand it.</p>
-        <div class="about-tags" aria-label="technical interests"><span>rust</span><span>rustc</span><span>llvm</span><span>arm64</span><span>dwarf</span><span>codeview</span><span>bootstrap</span><span>reproducible builds</span></div>
-      </div>
-    </section>
-
-    <section class="section writing-section" aria-labelledby="writing-title">
-      <div class="section-heading compact">
-        <p class="eyebrow">05 / writing</p>
-        <h2 id="writing-title">notes from the rabbit holes.</h2>
-      </div>
-      <div class="writing-links">
-        <a class="writing-card" href="https://rasmalai123.medium.com/compiler-b9a614f9ef7b" target="_blank" rel="noreferrer"><span>build log</span><strong>making a compiler from scratch</strong><span>medium ↗</span></a>
-        <a class="writing-card" href="https://rasmalai123.medium.com" target="_blank" rel="noreferrer"><span>archive</span><strong>technical writing & essays</strong><span>medium ↗</span></a>
-        <a class="writing-card" href="https://purring-tractor-5a3.notion.site/writings-1-2648de970310819787e4f66daa81191c" target="_blank" rel="noreferrer"><span>notes</span><strong>longer-form writing archive</strong><span>notion ↗</span></a>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="contact-inner">
-        <p class="eyebrow">06 / contact</p>
-        <h2>have a compiler bug<br />that smells like a build-system bug?</h2>
-        <p>that is, unfortunately, exactly my kind of problem.</p>
-        <div class="contact-links">
-          <a href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">github ↗</a>
-          <a href="https://x.com/abhinavs279" target="_blank" rel="noreferrer">x / @abhinavs279 ↗</a>
-          <a href="https://rasmalai123.medium.com" target="_blank" rel="noreferrer">medium ↗</a>
+    <section class="section method" id="method">
+      <div class="section-head">
+        <p class="section-no">03</p>
+        <div>
+          <p class="kicker">method</p>
+          <h2>the hash is the symptom.</h2>
         </div>
       </div>
+      <div class="method-grid">
+        <p class="method-lede">when two equivalent builds differ, i want the first byte that explains why — not a prettier description of the final mismatch.</p>
+        <ol>
+          <li><span>01</span><p>rebuild in isolated paths or environments.</p></li>
+          <li><span>02</span><p>compare hashes, archives, metadata, and object contents.</p></li>
+          <li><span>03</span><p>use diffoscope, llvm-readobj, dwarf/codeview inspection, and rustc metadata tools to narrow the layer.</p></li>
+          <li><span>04</span><p>fix the earliest unstable input, then make the regression executable as a test.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="kicker">04 // contact</p>
+      <h2>compiler bug.<br>build-system smell.<br>good.</h2>
+      <a href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">github / paradoxicalguy ↗</a>
+    </section>
+
+    <section class="quasar-section" aria-label="quasar animation">
+      <div class="quasar-copy">
+        <p class="kicker">end of transmission</p>
+        <p>quasar // compiler-v2</p>
+      </div>
+      <canvas id="quasar" aria-hidden="true"></canvas>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <span>abhinav srivastav</span>
-    <span>systems / compilers / rust</span>
-    <span>built from source · 2026</span>
+    <span>compilers // rust // systems</span>
+    <span>2026</span>
   </footer>
 </body>
 </html>
