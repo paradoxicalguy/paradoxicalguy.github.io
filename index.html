@@ -3,94 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#11100e" />
-  <meta name="description" content="Abhinav Srivastav — systems and compiler engineer working on Rust toolchain reproducibility, rustc, LLVM, debug info, bootstrap, and ARM64." />
-  <meta property="og:title" content="Abhinav Srivastav — systems / compilers" />
-  <meta property="og:description" content="Compiler internals, reproducible toolchains, debug info, native builds, and systems work." />
+  <meta name="theme-color" content="#05030b" />
+  <meta name="description" content="abhinav srivastav — systems and compiler engineer working on rust toolchain reproducibility, rustc, llvm, debug info, bootstrap, and arm64." />
+  <meta property="og:title" content="abhinav srivastav — systems / compilers" />
+  <meta property="og:description" content="compiler internals, reproducible toolchains, debug info, native builds, and systems work." />
   <meta property="og:type" content="website" />
-  <title>Abhinav Srivastav — systems / compilers</title>
+  <title>abhinav srivastav — systems / compilers</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="space-noise" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">skip to content</a>
 
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Abhinav Srivastav, home">
-      <span class="wordmark-mark">A/</span><span>SRIVASTAV</span>
+    <a class="wordmark" href="#top" aria-label="abhinav srivastav, home">
+      <span class="wordmark-sigil" aria-hidden="true">✦</span>
+      <span>paradoxicalguy</span>
+      <span class="wordmark-sub">// sol-03</span>
     </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav" aria-label="primary navigation">
+      <a href="#work">work</a>
+      <a href="#projects">projects</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
     </nav>
-    <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
-      <span aria-hidden="true">◐</span>
-    </button>
+    <div class="header-status" aria-label="site status">
+      <span class="status-dot" aria-hidden="true"></span>
+      signal online
+    </div>
   </header>
 
   <main id="main">
     <section class="hero section" id="top">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> systems / compilers / software infrastructure</p>
-        <h1>I trace software<br />all the way down.</h1>
+        <p class="eyebrow">systems / compilers / software infrastructure</p>
+        <h1>i trace software<br />all the way down.</h1>
         <p class="hero-lede">
-          I’m <strong>Abhinav Srivastav</strong>. I work on compiler and toolchain problems where the useful answer is usually hiding somewhere between source code and the final bytes on disk.
+          i’m <strong>abhinav srivastav</strong>. i work on compiler and toolchain problems where the useful answer is usually hiding somewhere between source code and the final bytes on disk.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#work">See selected work <span aria-hidden="true">↓</span></a>
-          <a class="button" href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#work">enter the work log <span aria-hidden="true">↓</span></a>
+          <a class="button" href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">github <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-coordinates" aria-label="current coordinates">
+          <span>origin: india / earth / sol</span>
+          <span>focus: rustc / reproducibility / native builds</span>
         </div>
       </div>
 
-      <aside class="hero-terminal" aria-label="Current focus">
-        <div class="terminal-top">
-          <span>current_focus.log</span>
-          <span class="terminal-lights" aria-hidden="true">● ● ●</span>
+      <aside class="quasar-panel" aria-label="toolchain orbit visual">
+        <div class="panel-top">
+          <span>quasar://toolchain-observatory</span>
+          <span>live</span>
         </div>
-        <div class="terminal-body">
-          <p><span class="muted">$</span> trace --artifact rustc</p>
-          <p class="terminal-step"><span>01</span><b>source</b><i>Rust / C / C++</i></p>
-          <p class="terminal-step"><span>02</span><b>compiler</b><i>rustc / LLVM</i></p>
-          <p class="terminal-step"><span>03</span><b>metadata</b><i>DWARF / CodeView</i></p>
-          <p class="terminal-step"><span>04</span><b>native build</b><i>cc / clang-cl / linker</i></p>
-          <p class="terminal-step"><span>05</span><b>artifact</b><i>rlib / object / PE / ELF</i></p>
-          <p class="terminal-result"><span class="muted">→</span> byte-identical or explain why not.</p>
+        <div class="quasar-system" aria-hidden="true">
+          <div class="star-field star-field-a"></div>
+          <div class="star-field star-field-b"></div>
+          <div class="orbit orbit-1"><span class="planet planet-rustc"></span></div>
+          <div class="orbit orbit-2"><span class="planet planet-llvm"></span></div>
+          <div class="orbit orbit-3"><span class="planet planet-debug"></span></div>
+          <div class="quasar-beam beam-a"></div>
+          <div class="quasar-beam beam-b"></div>
+          <div class="quasar-core"><span></span></div>
+          <div class="orbit-label label-rustc">rustc</div>
+          <div class="orbit-label label-llvm">llvm</div>
+          <div class="orbit-label label-debug">debug info</div>
+        </div>
+        <div class="telemetry">
+          <div><span>01</span><b>source</b><i>rust / c / c++</i></div>
+          <div><span>02</span><b>compiler</b><i>rustc / llvm</i></div>
+          <div><span>03</span><b>metadata</b><i>dwarf / codeview</i></div>
+          <div><span>04</span><b>native build</b><i>cc / clang-cl / linker</i></div>
+          <div><span>05</span><b>artifact</b><i>rlib / object / pe / elf</i></div>
+          <p><span>→</span> byte-identical or explain why not.</p>
         </div>
       </aside>
     </section>
 
-    <section class="proof-strip" aria-label="Portfolio highlights">
-      <div><strong>8</strong><span>merged rust-lang/rust PRs</span></div>
-      <div><strong>2</strong><span>platform families: Linux + Windows</span></div>
+    <section class="proof-strip" aria-label="portfolio highlights">
+      <div><strong>8</strong><span>merged rust-lang/rust prs</span></div>
+      <div><strong>2</strong><span>platform families: linux + windows</span></div>
       <div><strong>rustc</strong><span>bootstrap · debuginfo · reproducibility</span></div>
-      <div><strong>ARM64</strong><span>compiler + low-level experiments</span></div>
+      <div><strong>arm64</strong><span>compiler + low-level experiments</span></div>
     </section>
 
     <section class="section work-section" id="work">
       <div class="section-heading">
-        <p class="eyebrow">01 / selected systems work</p>
-        <h2>Small diffs.<br />Deep causes.</h2>
-        <p>Most of my recent work starts with a deceptively simple question: why did two equivalent builds produce different artifacts?</p>
+        <div>
+          <p class="eyebrow">01 / selected systems work</p>
+          <h2>small diffs.<br />deep causes.</h2>
+        </div>
+        <p>most of my recent work starts with a deceptively simple question: why did two equivalent builds produce different artifacts?</p>
       </div>
 
       <div class="case-grid">
         <article class="case-card case-card-featured reveal">
+          <div class="case-stars" aria-hidden="true"></div>
           <div class="case-meta">
-            <span class="chip">rustc</span><span class="chip">bootstrap</span><span class="chip">LLVM</span>
-            <span class="case-index">CASE 01</span>
+            <span class="chip">rustc</span><span class="chip">bootstrap</span><span class="chip">llvm</span>
+            <span class="case-index">case 01</span>
           </div>
-          <h3>Making Rust toolchain builds less path-dependent</h3>
-          <p class="case-summary">Tracked absolute build paths through crate metadata and native C/C++ debug info, then added targeted remapping at the points where those paths escaped existing coverage.</p>
-          <div class="case-flow" aria-label="Path leakage investigation flow">
-            <span>OUT_DIR</span><b>→</b><span>metadata</span><b>→</b><span>debug info</span><b>→</b><span>artifact hash</span>
+          <h3>making rust toolchain builds less path-dependent</h3>
+          <p class="case-summary">tracked absolute build paths through crate metadata and native c/c++ debug info, then added targeted remapping at the points where those paths escaped existing coverage.</p>
+          <div class="case-flow" aria-label="path leakage investigation flow">
+            <span>out_dir</span><b>→</b><span>metadata</span><b>→</b><span>debug info</span><b>→</b><span>artifact hash</span>
           </div>
           <ul class="case-points">
-            <li>Remapped bootstrap <code>OUT_DIR</code> into a stable virtual prefix.</li>
-            <li>Forwarded debug-prefix remapping into native C/C++ builds used by <code>rustc_llvm</code>.</li>
-            <li>Handled Windows-style path forms and <code>cc</code> compiler detection gaps.</li>
+            <li>remapped bootstrap <code>out_dir</code> into a stable virtual prefix.</li>
+            <li>forwarded debug-prefix remapping into native c/c++ builds used by <code>rustc_llvm</code>.</li>
+            <li>handled windows-style path forms and <code>cc</code> compiler detection gaps.</li>
           </ul>
           <div class="case-links">
             <a href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noreferrer">#155935 ↗</a>
@@ -103,13 +127,13 @@
         <article class="case-card reveal">
           <div class="case-meta">
             <span class="chip">testing</span><span class="chip">debuginfo</span>
-            <span class="case-index">CASE 02</span>
+            <span class="case-index">case 02</span>
           </div>
-          <h3>Reproducibility coverage that checks the artifacts we actually ship</h3>
-          <p class="case-summary">Strengthened run-make coverage around reproducible builds instead of relying on narrower historical assumptions.</p>
+          <h3>reproducibility coverage that checks the artifacts we actually ship</h3>
+          <p class="case-summary">strengthened run-make coverage around reproducible builds instead of relying on narrower historical assumptions.</p>
           <ul class="case-points">
-            <li>Re-enabled binary reproducibility testing with full debug info on Linux after validating the old regression no longer reproduced.</li>
-            <li>Generalized stdlib path-remapping coverage from one <code>libstd.rlib</code> to all distributed <code>.rlib</code> artifacts.</li>
+            <li>re-enabled binary reproducibility testing with full debug info on linux after validating the old regression no longer reproduced.</li>
+            <li>generalized stdlib path-remapping coverage from one <code>libstd.rlib</code> to all distributed <code>.rlib</code> artifacts.</li>
           </ul>
           <div class="case-links">
             <a href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noreferrer">#151517 ↗</a>
@@ -119,14 +143,14 @@
 
         <article class="case-card reveal">
           <div class="case-meta">
-            <span class="chip">Windows</span><span class="chip">MSVC</span><span class="chip">CodeView</span>
-            <span class="case-index">CASE 03</span>
+            <span class="chip">windows</span><span class="chip">msvc</span><span class="chip">codeview</span>
+            <span class="case-index">case 03</span>
           </div>
-          <h3>Deterministic Windows artifacts</h3>
-          <p class="case-summary">Followed Windows-specific non-determinism through PE timestamps, CodeView records, compiler-rt object names, and archive construction.</p>
+          <h3>deterministic windows artifacts</h3>
+          <p class="case-summary">followed windows-specific non-determinism through pe timestamps, codeview records, compiler-rt object names, and archive construction.</p>
           <ul class="case-points">
-            <li>Applied <code>/Brepro</code> specifically to bootstrap-built rustc artifacts on MSVC and added a regression test.</li>
-            <li>Investigated multiple compiler-rt path leaks; active work makes generated objects and archives independent of checkout directory.</li>
+            <li>applied <code>/brepro</code> specifically to bootstrap-built rustc artifacts on msvc and added a regression test.</li>
+            <li>investigated multiple compiler-rt path leaks; active work makes generated objects and archives independent of checkout directory.</li>
           </ul>
           <div class="case-links">
             <a href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noreferrer">#158873 · merged ↗</a>
@@ -138,78 +162,90 @@
 
     <section class="section ledger-section" aria-labelledby="ledger-title">
       <div class="section-heading compact">
-        <p class="eyebrow">02 / contribution ledger</p>
-        <h2 id="ledger-title">Merged into rust-lang/rust.</h2>
+        <p class="eyebrow">02 / contribution signal log</p>
+        <h2 id="ledger-title">merged into rust-lang/rust.</h2>
       </div>
 
       <div class="ledger" role="list">
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/159673" target="_blank" rel="noreferrer">
-          <span class="ledger-date">JUL 26</span><span class="ledger-id">#159673</span><strong>Forward -fdebug-prefix-map when using cc</strong><span class="ledger-area">bootstrap</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">jul 26</span><span class="ledger-id">#159673</span><strong>forward -fdebug-prefix-map when using cc</strong><span class="ledger-area">bootstrap</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/156570" target="_blank" rel="noreferrer">
-          <span class="ledger-date">JUL 27</span><span class="ledger-id">#156570</span><strong>Extend remap-path-prefix-std to all stdlib rlibs</strong><span class="ledger-area">tests</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">jul 27</span><span class="ledger-id">#156570</span><strong>extend remap-path-prefix-std to all stdlib rlibs</strong><span class="ledger-area">tests</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noreferrer">
-          <span class="ledger-date">JUL 27</span><span class="ledger-id">#158873</span><strong>Apply /Brepro in bootstrap on MSVC + regression test</strong><span class="ledger-area">windows</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">jul 27</span><span class="ledger-id">#158873</span><strong>apply /brepro in bootstrap on msvc + regression test</strong><span class="ledger-area">windows</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/156504" target="_blank" rel="noreferrer">
-          <span class="ledger-date">MAY 13</span><span class="ledger-id">#156504</span><strong>Remap Windows-style OUT_DIR paths</strong><span class="ledger-area">bootstrap</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">may 13</span><span class="ledger-id">#156504</span><strong>remap windows-style out_dir paths</strong><span class="ledger-area">bootstrap</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/156186" target="_blank" rel="noreferrer">
-          <span class="ledger-date">MAY 06</span><span class="ledger-id">#156186</span><strong>Remap ci-llvm debug paths via -ffile-prefix-map</strong><span class="ledger-area">LLVM</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">may 06</span><span class="ledger-id">#156186</span><strong>remap ci-llvm debug paths via -ffile-prefix-map</strong><span class="ledger-area">llvm</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noreferrer">
-          <span class="ledger-date">APR 30</span><span class="ledger-id">#155935</span><strong>Remap OUT_DIR path leakage in crate metadata</strong><span class="ledger-area">bootstrap</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">apr 30</span><span class="ledger-id">#155935</span><strong>remap out_dir path leakage in crate metadata</strong><span class="ledger-area">bootstrap</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noreferrer">
-          <span class="ledger-date">JAN 24</span><span class="ledger-id">#151517</span><strong>Enable reproducible binary builds with debuginfo on Linux</strong><span class="ledger-area">tests</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">jan 24</span><span class="ledger-id">#151517</span><strong>enable reproducible binary builds with debuginfo on linux</strong><span class="ledger-area">tests</span><span class="ledger-arrow">↗</span>
         </a>
         <a class="ledger-row reveal" role="listitem" href="https://github.com/rust-lang/rust/pull/150368" target="_blank" rel="noreferrer">
-          <span class="ledger-date">JAN 11</span><span class="ledger-id">#150368</span><strong>Add Ordering to minicore for a no_core codegen test</strong><span class="ledger-area">compiler</span><span class="ledger-arrow">↗</span>
+          <span class="ledger-date">jan 11</span><span class="ledger-id">#150368</span><strong>add ordering to minicore for a no_core codegen test</strong><span class="ledger-area">compiler</span><span class="ledger-arrow">↗</span>
         </a>
       </div>
     </section>
 
     <section class="section projects-section" id="projects">
       <div class="section-heading">
-        <p class="eyebrow">03 / things I build to understand things</p>
-        <h2>Projects from first principles.</h2>
-        <p>Small enough to reason about end-to-end; low-level enough that the abstractions stay visible.</p>
+        <div>
+          <p class="eyebrow">03 / objects in orbit</p>
+          <h2>projects from first principles.</h2>
+        </div>
+        <p>small enough to reason about end-to-end; low-level enough that the abstractions stay visible.</p>
       </div>
 
       <div class="project-grid">
-        <a class="project-card project-card-large reveal" href="https://github.com/paradoxicalguy/compiler-v2" target="_blank" rel="noreferrer">
-          <div class="project-number">P/01</div>
-          <div>
-            <p class="project-kicker">Rust · compiler · ARM64</p>
-            <h3>Quasar v2</h3>
-            <p>A deliberately small C-like compiler with explicit lexer, parser, AST, semantic analysis, optimizer, ARM64 codegen, cross-architecture execution through QEMU, and per-phase benchmarking.</p>
+        <a class="project-card project-card-large project-quasar reveal" href="https://github.com/paradoxicalguy/compiler-v2" target="_blank" rel="noreferrer">
+          <div class="project-planet planet-quasar" aria-hidden="true"><span></span></div>
+          <div class="project-number">object 01 // qsr-02</div>
+          <div class="project-content">
+            <p class="project-kicker">rust · compiler · arm64</p>
+            <h3>quasar v2</h3>
+            <p>a deliberately small c-like compiler with explicit lexer, parser, ast, semantic analysis, optimizer, arm64 codegen, cross-architecture execution through qemu, and per-phase benchmarking.</p>
           </div>
-          <div class="pipeline-mini" aria-hidden="true"><span>lex</span><i></i><span>parse</span><i></i><span>sema</span><i></i><span>opt</span><i></i><span>A64</span></div>
+          <div class="pipeline-mini" aria-hidden="true"><span>lex</span><i></i><span>parse</span><i></i><span>sema</span><i></i><span>opt</span><i></i><span>a64</span></div>
           <span class="project-arrow">↗</span>
         </a>
 
-        <a class="project-card reveal" href="https://github.com/paradoxicalguy/cli-todo" target="_blank" rel="noreferrer">
-          <div class="project-number">P/02</div>
-          <p class="project-kicker">Rust · CLI</p>
-          <h3>cli-todo</h3>
-          <p>A small command-line todo application built in Rust without leaning on serde or clap.</p>
+        <a class="project-card project-moon reveal" href="https://github.com/paradoxicalguy/cli-todo" target="_blank" rel="noreferrer">
+          <div class="project-planet moon-a" aria-hidden="true"></div>
+          <div class="project-number">object 02 // cli-01</div>
+          <div class="project-content">
+            <p class="project-kicker">rust · cli</p>
+            <h3>cli-todo</h3>
+            <p>a small command-line todo application built in rust without leaning on serde or clap.</p>
+          </div>
           <span class="project-arrow">↗</span>
         </a>
 
-        <a class="project-card reveal" href="https://github.com/paradoxicalguy/orderbook" target="_blank" rel="noreferrer">
-          <div class="project-number">P/03</div>
-          <p class="project-kicker">Rust · data structures</p>
-          <h3>Orderbook</h3>
-          <p>An order book implementation that records orders, matches, sales, and trades.</p>
+        <a class="project-card project-ring reveal" href="https://github.com/paradoxicalguy/orderbook" target="_blank" rel="noreferrer">
+          <div class="project-planet ring-a" aria-hidden="true"></div>
+          <div class="project-number">object 03 // ob-01</div>
+          <div class="project-content">
+            <p class="project-kicker">rust · data structures</p>
+            <h3>orderbook</h3>
+            <p>an order book implementation that records orders, matches, sales, and trades.</p>
+          </div>
           <span class="project-arrow">↗</span>
         </a>
 
-        <a class="project-card reveal" href="https://github.com/paradoxicalguy/asm-arm64-scripts" target="_blank" rel="noreferrer">
-          <div class="project-number">P/04</div>
-          <p class="project-kicker">Assembly · ARM64</p>
-          <h3>ARM64 scripts</h3>
-          <p>Low-level experiments around arithmetic, operators, shifts, rotates, and direct-mode ARM64 work.</p>
+        <a class="project-card project-planetary reveal" href="https://github.com/paradoxicalguy/asm-arm64-scripts" target="_blank" rel="noreferrer">
+          <div class="project-planet planet-a" aria-hidden="true"></div>
+          <div class="project-number">object 04 // a64-01</div>
+          <div class="project-content">
+            <p class="project-kicker">assembly · arm64</p>
+            <h3>arm64 scripts</h3>
+            <p>low-level experiments around arithmetic, operators, shifts, rotates, and direct-mode arm64 work.</p>
+          </div>
           <span class="project-arrow">↗</span>
         </a>
       </div>
@@ -217,58 +253,59 @@
 
     <section class="section about-section" id="about">
       <div class="about-statement reveal">
-        <p class="eyebrow">04 / about</p>
-        <blockquote>“I like finding out why software behaves the way it does.”</blockquote>
+        <p class="eyebrow">04 / transmission from earth</p>
+        <blockquote>“i like finding out why software behaves the way it does.”</blockquote>
       </div>
       <div class="about-copy reveal">
-        <p>I’m most at home around compilers, toolchains, binary formats, assembly, and the infrastructure that turns source into artifacts people can trust.</p>
-        <p>Rust is my primary language, but the interesting bugs rarely respect language boundaries: they cross into C/C++, linker behavior, debug formats, build systems, filesystem paths, and CI.</p>
-        <p>I also write about what I’m learning — especially when building something from scratch is the clearest way to understand it.</p>
-        <div class="about-tags" aria-label="Technical interests">
-          <span>Rust</span><span>rustc</span><span>LLVM</span><span>ARM64</span><span>DWARF</span><span>CodeView</span><span>bootstrap</span><span>reproducible builds</span>
+        <p>i’m most at home around compilers, toolchains, binary formats, assembly, and the infrastructure that turns source into artifacts people can trust.</p>
+        <p>rust is my primary language, but the interesting bugs rarely respect language boundaries: they cross into c/c++, linker behavior, debug formats, build systems, filesystem paths, and ci.</p>
+        <p>i also write about what i’m learning — especially when building something from scratch is the clearest way to understand it.</p>
+        <div class="about-tags" aria-label="technical interests">
+          <span>rust</span><span>rustc</span><span>llvm</span><span>arm64</span><span>dwarf</span><span>codeview</span><span>bootstrap</span><span>reproducible builds</span>
         </div>
       </div>
     </section>
 
     <section class="section writing-section" aria-labelledby="writing-title">
       <div class="section-heading compact">
-        <p class="eyebrow">05 / writing</p>
-        <h2 id="writing-title">Notes from the rabbit holes.</h2>
+        <p class="eyebrow">05 / field notes</p>
+        <h2 id="writing-title">notes from the rabbit holes.</h2>
       </div>
       <div class="writing-links">
         <a class="writing-card reveal" href="https://rasmalai123.medium.com/compiler-b9a614f9ef7b" target="_blank" rel="noreferrer">
-          <span class="writing-type">BUILD LOG</span>
-          <strong>Making a compiler from scratch</strong>
-          <span>Medium ↗</span>
+          <span class="writing-type">build log</span>
+          <strong>making a compiler from scratch</strong>
+          <span>medium ↗</span>
         </a>
         <a class="writing-card reveal" href="https://rasmalai123.medium.com" target="_blank" rel="noreferrer">
-          <span class="writing-type">ARCHIVE</span>
-          <strong>Technical writing & essays</strong>
-          <span>Medium ↗</span>
+          <span class="writing-type">archive</span>
+          <strong>technical writing & essays</strong>
+          <span>medium ↗</span>
         </a>
         <a class="writing-card reveal" href="https://purring-tractor-5a3.notion.site/writings-1-2648de970310819787e4f66daa81191c" target="_blank" rel="noreferrer">
-          <span class="writing-type">NOTES</span>
-          <strong>Longer-form writing archive</strong>
-          <span>Notion ↗</span>
+          <span class="writing-type">notes</span>
+          <strong>longer-form writing archive</strong>
+          <span>notion ↗</span>
         </a>
       </div>
     </section>
 
     <section class="contact-section" id="contact">
-      <p class="eyebrow">06 / contact</p>
-      <h2>Have a compiler bug<br />that smells like a build-system bug?</h2>
-      <p>That is, unfortunately, exactly my kind of problem.</p>
+      <div class="contact-orbit" aria-hidden="true"></div>
+      <p class="eyebrow">06 / open channel</p>
+      <h2>have a compiler bug<br />that smells like a build-system bug?</h2>
+      <p>that is, unfortunately, exactly my kind of problem.</p>
       <div class="contact-links">
-        <a href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <a href="https://x.com/abhinavs279" target="_blank" rel="noreferrer">X / @abhinavs279 ↗</a>
-        <a href="https://rasmalai123.medium.com" target="_blank" rel="noreferrer">Medium ↗</a>
+        <a href="https://github.com/paradoxicalguy" target="_blank" rel="noreferrer">github ↗</a>
+        <a href="https://x.com/abhinavs279" target="_blank" rel="noreferrer">x / @abhinavs279 ↗</a>
+        <a href="https://rasmalai123.medium.com" target="_blank" rel="noreferrer">medium ↗</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>ABHINAV SRIVASTAV</span>
-    <span>INDIA / EARTH</span>
+    <span>abhinav srivastav</span>
+    <span>india / earth / sol</span>
     <span>built from source · 2026</span>
   </footer>
 </body>
