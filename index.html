@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#120522">
+  <meta name="theme-color" content="#ff2bd6">
   <meta name="description" content="Abhinav Srivastav — Rust compiler work, reproducible builds, bootstrap, LLVM, debug info, and ARM64.">
   <title>abhinav srivastav // systems</title>
   <link rel="stylesheet" href="style.css">
@@ -220,7 +220,7 @@
         ctx.restore();
         const jet=ctx.createLinearGradient(cx,cy-min*.34,cx,cy+min*.34);
         jet.addColorStop(0,'rgba(40,245,255,0)');jet.addColorStop(.36,'rgba(40,245,255,.05)');jet.addColorStop(.5,'rgba(255,255,255,.22)');jet.addColorStop(.64,'rgba(255,42,190,.06)');jet.addColorStop(1,'rgba(255,42,190,0)');ctx.fillStyle=jet;ctx.fillRect(cx-.7,cy-min*.38,1.4,min*.76);
-        const core=ctx.createRadialGradient(cx,cy,0,cx,cy,min*.05);core.addColorStop(0,'rgba(0,0,0,1)');core.addColorStop(.60,'rgba(0,0,0,1)');core.addColorStop(.78,'rgba(255,255,255,.92)');core.addColorStop(.84,'rgba(40,245,255,.58)');core.addColorStop(1,'rgba(40,245,255,0)');ctx.fillStyle=core;ctx.beginPath();ctx.arc(cx,cy,min*.052,0,Math.PI*2);ctx.fill();
+        const core=ctx.createRadialGradient(cx,cy,0,cx,cy,min*.05);core.addColorStop(0,'rgba(43,22,128,1)');core.addColorStop(.60,'rgba(43,22,128,1)');core.addColorStop(.78,'rgba(255,255,255,.92)');core.addColorStop(.84,'rgba(40,245,255,.58)');core.addColorStop(1,'rgba(40,245,255,0)');ctx.fillStyle=core;ctx.beginPath();ctx.arc(cx,cy,min*.052,0,Math.PI*2);ctx.fill();
         t+=16;if(!reduce)requestAnimationFrame(draw);
       }
       resize(); window.addEventListener('resize',resize,{passive:true}); draw();
