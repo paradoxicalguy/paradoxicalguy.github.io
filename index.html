@@ -3,12 +3,413 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>abhinav srivastav</title>
+
+    <title>abhinav srivastav // systems</title>
+
+    <meta
+        name="description"
+        content="abhinav srivastav — systems, compilers, rustc, llvm"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>abhinav srivastav</h1>
-    <p>compiler engineering</p>
+<div class="space"></div>
+<div class="scanlines"></div>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-mark">✦</span>
+        <span>PARADOXYCALGUY</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">home</a>
+        <a href="work.html">work</a>
+        <a href="writing.html">writing</a>
+        <a href="research.html">research</a>
+        <a href="about.html">about</a>
+    </nav>
+
+    <div class="signal">
+        <span class="signal-dot"></span>
+        online
+    </div>
+</header>
+
+
+<main>
+
+    <!-- hero -->
+
+    <section class="hero">
+
+        <div class="hero-meta">
+            <span>NODE // 001</span>
+            <span>INDIA / EARTH</span>
+        </div>
+
+        <div class="hero-content">
+
+            <p class="kicker">
+                SYSTEMS // COMPILERS // SOFTWARE INFRASTRUCTURE
+            </p>
+
+            <h1>
+                abhinav<br>
+                <span>srivastav</span>
+            </h1>
+
+            <p class="hero-line">
+                tracing software from source<br>
+                all the way down.
+            </p>
+
+        </div>
+
+        <div class="hero-bottom">
+            <a href="work.html" class="primary-link">
+                enter archive <span>↗</span>
+            </a>
+
+            <a href="https://github.com/paradoxicalguy"
+               target="_blank"
+               rel="noreferrer"
+               class="secondary-link">
+                github
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- what i'm doing -->
+
+    <section class="section">
+
+        <div class="section-label">
+            <span>01</span>
+            <span>ACTIVE SYSTEMS</span>
+        </div>
+
+        <div class="systems-grid">
+
+            <article class="system-card system-card-large">
+                <div class="card-top">
+                    <span>PRIMARY</span>
+                    <span>01</span>
+                </div>
+
+                <h2>rustc</h2>
+
+                <p>
+                    compiler internals,
+                    code generation,
+                    debuginfo,
+                    bootstrap,
+                    toolchains.
+                </p>
+
+                <div class="card-footer">
+                    <span>HIR</span>
+                    <span>MIR</span>
+                    <span>LLVM</span>
+                </div>
+            </article>
+
+
+            <article class="system-card">
+                <div class="card-top">
+                    <span>TRACK</span>
+                    <span>02</span>
+                </div>
+
+                <h2>llvm</h2>
+
+                <p>
+                    ir, backends,
+                    object files,
+                    linkers,
+                    machine code.
+                </p>
+
+                <div class="card-footer">
+                    <span>IR</span>
+                    <span>CODEGEN</span>
+                </div>
+            </article>
+
+
+            <article class="system-card">
+                <div class="card-top">
+                    <span>TRACK</span>
+                    <span>03</span>
+                </div>
+
+                <h2>systems</h2>
+
+                <p>
+                    operating systems,
+                    assembly,
+                    binaries,
+                    performance,
+                    hardware.
+                </p>
+
+                <div class="card-footer">
+                    <span>AARCH64</span>
+                    <span>C</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- signal -->
+
+    <section class="section">
+
+        <div class="section-label">
+            <span>02</span>
+            <span>RECENT SIGNALS</span>
+        </div>
+
+        <div class="signal-list">
+
+            <a href="work/reproducible-builds.html" class="signal-item">
+
+                <div class="signal-index">001</div>
+
+                <div class="signal-main">
+                    <span class="signal-type">INVESTIGATION</span>
+                    <h3>reproducible builds in rust</h3>
+
+                    <p>
+                        tracking nondeterminism across
+                        rustc, llvm, dwarf, codeview and pdb.
+                    </p>
+                </div>
+
+                <div class="signal-arrow">↗</div>
+
+            </a>
+
+
+            <a href="work/repro-check.html" class="signal-item">
+
+                <div class="signal-index">002</div>
+
+                <div class="signal-main">
+                    <span class="signal-type">TOOLING</span>
+                    <h3>repro-check</h3>
+
+                    <p>
+                        differential builds + artifact
+                        analysis for rust toolchains.
+                    </p>
+                </div>
+
+                <div class="signal-arrow">↗</div>
+
+            </a>
+
+
+            <a href="work/compiler-builtins.html" class="signal-item">
+
+                <div class="signal-index">003</div>
+
+                <div class="signal-main">
+                    <span class="signal-type">DEBUG INFO</span>
+                    <h3>compiler-builtins</h3>
+
+                    <p>
+                        tracing source-path leakage
+                        through native c compilation.
+                    </p>
+                </div>
+
+                <div class="signal-arrow">↗</div>
+
+            </a>
+
+
+            <a href="work/msvc-brepro.html" class="signal-item">
+
+                <div class="signal-index">004</div>
+
+                <div class="signal-main">
+                    <span class="signal-type">LINKER</span>
+                    <h3>/brepro</h3>
+
+                    <p>
+                        making windows artifacts
+                        less sensitive to build environment.
+                    </p>
+                </div>
+
+                <div class="signal-arrow">↗</div>
+
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- pipeline -->
+
+    <section class="section pipeline-section">
+
+        <div class="section-label">
+            <span>03</span>
+            <span>THE PIPELINE</span>
+        </div>
+
+        <div class="pipeline">
+
+            <div class="pipeline-node">
+                <span>01</span>
+                <strong>source</strong>
+            </div>
+
+            <div class="pipeline-line"></div>
+
+            <div class="pipeline-node">
+                <span>02</span>
+                <strong>rustc</strong>
+            </div>
+
+            <div class="pipeline-line"></div>
+
+            <div class="pipeline-node">
+                <span>03</span>
+                <strong>mir</strong>
+            </div>
+
+            <div class="pipeline-line"></div>
+
+            <div class="pipeline-node highlight">
+                <span>04</span>
+                <strong>llvm ir</strong>
+            </div>
+
+            <div class="pipeline-line"></div>
+
+            <div class="pipeline-node">
+                <span>05</span>
+                <strong>backend</strong>
+            </div>
+
+            <div class="pipeline-line"></div>
+
+            <div class="pipeline-node">
+                <span>06</span>
+                <strong>object</strong>
+            </div>
+
+            <div class="pipeline-line"></div>
+
+            <div class="pipeline-node">
+                <span>07</span>
+                <strong>binary</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- about -->
+
+    <section class="section about-section">
+
+        <div class="section-label">
+            <span>04</span>
+            <span>ABOUT THE OPERATOR</span>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-big">
+                i like finding out
+                <span>why</span>
+                software behaves
+                the way it does.
+            </div>
+
+            <div class="about-small">
+
+                <p>
+                    currently digging through
+                    rustc and llvm.
+                </p>
+
+                <p>
+                    usually somewhere between
+                    compiler internals and the
+                    final bytes on disk.
+                </p>
+
+                <a href="about.html">
+                    full profile →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- links -->
+
+    <section class="section links-section">
+
+        <div class="section-label">
+            <span>05</span>
+            <span>EXTERNAL NODES</span>
+        </div>
+
+        <div class="external-links">
+
+            <a
+                href="https://github.com/paradoxicalguy"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <span>github</span>
+                <span>↗</span>
+            </a>
+
+            <a href="resume.html">
+                <span>resume</span>
+                <span>→</span>
+            </a>
+
+            <a href="contact.html">
+                <span>contact</span>
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <span>PARADOXYCALGUY // 2026</span>
+
+    <span>
+        BUILT FROM SCRATCH
+        <span class="footer-dot">✦</span>
+    </span>
+
+</footer>
 
 </body>
 </html>
