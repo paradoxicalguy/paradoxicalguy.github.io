@@ -12,6 +12,21 @@
       "url": "https://github.com/paradoxicalguy"
     }
   },
+  "projects": [
+    {
+      "guid": "my-rust-contributions",
+      "name": "My contributions to the Rust compiler",
+      "description": "My individual contributions to rust-lang/rust, made from my fork and submitted upstream as pull requests. This is a personal contribution record, not a project I represent. My pull requests: https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy",
+      "webpageUrl": {
+        "url": "https://paradoxicalguy.github.io"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/paradoxicalguy/rust"
+      },
+      "licenses": ["spdx:MIT", "spdx:Apache-2.0"],
+      "tags": ["rust", "compiler", "reproducible-builds", "developer-tools"]
+    }
+  ],
   "funding": {
     "channels": [
       {
