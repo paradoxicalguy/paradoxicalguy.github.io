@@ -1,5 +1,4 @@
 {
-  "$schema": "https://fundingjson.org/schema/v1.1.0.json",
   "version": "v1.1.0",
   "entity": {
     "type": "individual",
@@ -23,8 +22,16 @@
       "repositoryUrl": {
         "url": "https://github.com/paradoxicalguy/rust"
       },
-      "licenses": ["spdx:MIT", "spdx:Apache-2.0"],
-      "tags": ["rust", "compiler", "reproducible-builds", "developer-tools"]
+      "licenses": [
+        "spdx:MIT",
+        "spdx:Apache-2.0"
+      ],
+      "tags": [
+        "rust",
+        "compiler",
+        "reproducible-builds",
+        "developer-tools"
+      ]
     }
   ],
   "funding": {
@@ -45,8 +52,11 @@
         "amount": 100000,
         "currency": "INR",
         "frequency": "one-time",
-        "channels": ["bank-india"]
+        "channels": [
+          "bank-india"
+        ]
       }
-    ]
+    ],
+    "history": null
   }
 }
