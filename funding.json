@@ -41,7 +41,7 @@
         "guid": "dev-machine",
         "status": "active",
         "name": "Replacement development laptop",
-        "description": "I'm seeking a one-time grant of INR 100,000 as support toward replacing my failing development laptop. Its screen is damaged, it overheats and sometimes shuts down during compiler builds, and storage limitations regularly interrupt my work. I often have to restrict rustc builds to one or two parallel jobs to keep the machine usable.\n\nReliable hardware would let me build, test and investigate Rust compiler changes more consistently. I plan to continue contributing upstream fixes, regression tests and reproducible-build improvements, with progress visible through public pull requests and a short quarterly update.\n\nThe replacement is expected to cost more than the requested amount, so this is partial funding. I cannot currently afford a replacement on my own. If I receive support for the same hardware need from another source, I will disclose it to FOSS United and coordinate accordingly.",
+        "description": "One-time grant of INR 100,000 as partial support toward replacing my failing development laptop. The screen is damaged, it overheats and shuts down during compiler builds, and full storage interrupts my work, so I often limit rustc to one or two jobs. A reliable machine lets me keep contributing fixes and regression tests upstream, with progress in public PRs and a short quarterly update. The replacement costs more than this. I will disclose any other funding for the same need to FOSS United.",
         "amount": 100000,
         "currency": "INR",
         "frequency": "one-time",
