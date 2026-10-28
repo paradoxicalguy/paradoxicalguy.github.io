@@ -1,0 +1,37 @@
+{
+  "$schema": "https://fundingjson.org/schema/v1.1.0.json",
+  "version": "v1.1.0",
+  "entity": {
+    "type": "individual",
+    "role": "contributor",
+    "name": "Abhinav Srivastav",
+    "email": "abhinavsrivastav25098@gmail.com",
+    "phone": "",
+    "description": "I'm a BSc IT student based in Mumbai, India, and an independent contributor to the Rust compiler and toolchain. I've been contributing to rust-lang/rust since December 2025, with 14 merged pull requests as of 28 October 2026 covering reproducible builds, bootstrap, compiler fixes and regression tests. I've also contributed to the cc-rs project.\n\nMy contributions are public: https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy\n\nI intend to continue working on compiler correctness, reproducibility and related tooling, including investigating bugs, preparing fixes and contributing regression tests upstream.",
+    "webpageUrl": {
+      "url": "https://github.com/paradoxicalguy"
+    }
+  },
+  "funding": {
+    "channels": [
+      {
+        "guid": "bank-india",
+        "type": "bank",
+        "address": "",
+        "description": "Indian bank transfer. Details will be shared by email if the grant is approved."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "dev-machine",
+        "status": "active",
+        "name": "Replacement development laptop",
+        "description": "I'm seeking a one-time grant of INR 100,000 as support toward replacing my failing development laptop. Its screen is damaged, it overheats and sometimes shuts down during compiler builds, and storage limitations regularly interrupt my work. I often have to restrict rustc builds to one or two parallel jobs to keep the machine usable.\n\nReliable hardware would let me build, test and investigate Rust compiler changes more consistently. I plan to continue contributing upstream fixes, regression tests and reproducible-build improvements, with progress visible through public pull requests and a short quarterly update.\n\nThe replacement is expected to cost more than the requested amount, so this is partial funding. I cannot currently afford a replacement on my own. If I receive support for the same hardware need from another source, I will disclose it to FOSS United and coordinate accordingly.",
+        "amount": 100000,
+        "currency": "INR",
+        "frequency": "one-time",
+        "channels": ["bank-india"]
+      }
+    ]
+  }
+}
