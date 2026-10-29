@@ -1,35 +1,495 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8eacf"><meta name="description" content="Help Abhinav keep contributing to Rust: a tiny pixel-art quest for dependable development hardware."><title>Abhinav's Hardware Quest · Keep Rust Building</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>my laptop is at 1 hp | abhinav</title>
+<meta name="description" content="Abhinav contributes to the Rust compiler. His laptop is failing. This page shows the work and how to help replace it.">
+<meta property="og:title" content="my laptop is at 1 hp">
+<meta property="og:description" content="A Rust compiler contributor from Mumbai, a failing laptop, and a way to help replace it.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2e6b3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%232e6b3a'/%3E%3Cpath fill='%23d9473b' d='M1 2h2v1h2V2h2v2H6v1H5v1H3V5H2V4H1z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--ink:#25263b;--paper:#fff9e9;--cream:#f8eacf;--grass:#99c882;--darkgrass:#568b70;--blue:#8bc9d4;--edge:#33334e;--accent:#e88576;--yellow:#ffd86b;--shadow:#33334e38}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 'Space Grotesk',system-ui,sans-serif;overflow-x:hidden}a{color:inherit}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:3px solid #ef6767;outline-offset:5px}::selection{background:#f9cb67}h1,h2,h3,p{margin-top:0}.mono,.eyebrow,.chip,.stat,.pixel-btn,.label,.tiny,.nav{font-family:'DM Mono',monospace}h1,h2,h3{line-height:1.14;letter-spacing:-.055em}h1{font-size:clamp(3.2rem,7.4vw,6.8rem);margin-bottom:24px}h2{font-size:clamp(2.3rem,4.5vw,4.1rem);margin-bottom:20px}h3{font-size:1.35rem;letter-spacing:-.025em}.wrap{max-width:1150px;margin:auto;padding:0 24px}.nav{display:flex;justify-content:space-between;align-items:center;padding:17px 0;gap:12px;font-size:.77rem;font-weight:500}.nav a{text-decoration:none}.navlinks{display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:9px;font-weight:700}.mini-sprite{width:21px;height:21px;image-rendering:pixelated}.navlinks a:hover{color:#ca5d59}.hero{position:relative;min-height:660px;background:#bbe0dd;overflow:hidden;border-top:4px solid var(--edge);border-bottom:5px solid var(--edge)}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#c9e7df 0 49%,transparent 49%),repeating-linear-gradient(90deg,transparent 0 64px,#ffffff13 64px 68px);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;min-height:660px;gap:15px}.hero-copy{padding:62px 0 85px;z-index:2}.eyebrow{font-size:.75rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;margin-bottom:21px}.eyebrow span{background:var(--yellow);padding:6px 11px;border:3px solid var(--edge);box-shadow:4px 4px 0 var(--edge)}.hero-lead{max-width:550px;font-size:1.18rem;line-height:1.65;font-weight:500}.actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:28px}.pixel-btn{display:inline-block;border:3px solid var(--edge);padding:12px 18px;background:var(--yellow);font-size:.83rem;text-decoration:none;font-weight:500;box-shadow:5px 5px 0 var(--edge);transition:transform .13s,box-shadow .13s;color:var(--ink)}.pixel-btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--edge)}.pixel-btn.alt{background:#fff9e9}.pixel-btn.coral{background:#f9a68a}.scene{height:545px;position:relative;align-self:end;image-rendering:pixelated}.scene svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(8px 10px 0 #33334e10)}.scene-note{position:absolute;bottom:40px;right:4%;z-index:2;background:var(--paper);border:3px solid var(--edge);padding:9px 12px;box-shadow:4px 4px 0 var(--edge);font:11px 'DM Mono',monospace;transform:rotate(3deg)}.ground{position:absolute;height:100px;bottom:0;left:0;right:0;background:repeating-linear-gradient(90deg,#9bc98b 0 52px,#92bf81 52px 58px);border-top:6px solid #679973}.ground:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(130deg,transparent 0 27px,#659a7933 27px 31px,transparent 31px 70px)}.section{padding:90px 0}.section-heading{max-width:760px}.section-heading p{font-size:1.1rem;color:#555368}.label{font-weight:500;font-size:.75rem;text-transform:uppercase;letter-spacing:.11em;margin-bottom:15px;color:#755073}.terrain{background-color:#cbe3bd;background-image:linear-gradient(45deg,#bad7aa 25%,transparent 25%,transparent 75%,#bad7aa 75%),linear-gradient(45deg,#bad7aa 25%,transparent 25%,transparent 75%,#bad7aa 75%);background-size:36px 36px;background-position:0 0,18px 18px;border-block:5px solid var(--edge)}.questbox{background:var(--paper);border:4px solid var(--edge);box-shadow:9px 9px 0 #33334e45;padding:27px}.questbox strong{font-weight:700}.questbox p:last-child{margin-bottom:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 40px}.stat{background:var(--paper);border:3px solid var(--edge);box-shadow:5px 5px 0 #33334e35;padding:18px}.stat .big{font-size:1.15rem;font-weight:500;display:block}.stat small{display:block;font:12px/1.5 'Space Grotesk',sans-serif;margin-top:5px;color:#555368}.prgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pr{position:relative;background:var(--paper);border:3px solid var(--edge);padding:23px;box-shadow:5px 5px 0 #33334e35;transition:transform .18s}.pr:hover{transform:translateY(-5px)}.pr:before{content:'✦';position:absolute;right:14px;top:12px;font-size:1.2rem;color:#db8e72}.pr h3{margin:16px 0 12px}.pr p{font-size:.92rem;color:#555368}.pr a{font-weight:700;text-underline-offset:3px;font-size:.88rem}.chip{font-size:.7rem;color:#6b4c65}.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.problem{background:#fff9e9}.problems{display:grid;gap:12px}.problem-item{background:white;border:2px solid #37344b;padding:17px;display:flex;gap:15px;align-items:flex-start}.problem-item .symbol{font-size:1.5rem;flex:none}.problem-item strong{display:block}.problem-item p{font-size:.9rem;margin:4px 0 0;color:#5b5868}.equipment{margin-top:24px;background:#fae2b2;padding:27px;border:4px solid var(--edge);box-shadow:8px 8px 0 var(--edge)}.equipment ul{padding-left:21px;margin-bottom:10px}.note{font-size:.84rem;color:#5a5366}.dialogue{margin-top:24px;padding:20px;border:3px solid var(--edge);background:#e4f0e0;box-shadow:5px 5px 0 var(--edge);font-size:.93rem}.payment{background:#e5e5f5;border-block:5px solid var(--edge)}.supportcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}.supportcard{background:var(--paper);border:3px solid var(--edge);box-shadow:5px 5px 0 var(--edge);padding:24px}.supportcard:nth-child(2){background:#fff0d5}.supportcard:nth-child(3){background:#e2efe2}.supportcard .tag{font:11px 'DM Mono',monospace;letter-spacing:.04em}.supportcard h3{margin:12px 0}.supportcard p{font-size:.93rem;color:#4e4b61}.supportcard .pixel-btn{margin-top:6px}.detail{background:#fff;border:2px dashed #77758d;padding:12px;margin:12px 0;overflow-wrap:anywhere;font:12px/1.8 'DM Mono',monospace}.supportcard button.copy{background:#fff;border:2px solid var(--edge);padding:7px 10px;font:12px 'DM Mono',monospace}.supportcard button.copy:disabled{opacity:.5;cursor:not-allowed}.smallprint{color:#5e5974;font-size:.85rem;max-width:750px}.share{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:#fff7db;border:3px solid var(--edge);box-shadow:7px 7px 0 var(--edge);padding:25px;margin-top:34px}.share img{width:152px;height:152px;background:white;border:3px solid var(--edge);padding:8px;image-rendering:pixelated}.footer{padding:34px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.83rem}.footer a{text-underline-offset:3px}.cat{position:fixed;left:0;top:0;width:46px;height:46px;z-index:20;pointer-events:none;image-rendering:pixelated;transition:opacity .2s;opacity:0;will-change:transform}.cat svg{width:46px;height:46px;shape-rendering:crispEdges;filter:drop-shadow(3px 4px 0 #33334e50)}.cat.show{opacity:1}.cat.flip svg{transform:scaleX(-1)}.cat.hop svg{animation:hop .28s ease-in-out}@keyframes hop{50%{transform:translateY(-8px)}}.floating-stars{position:absolute;inset:0;pointer-events:none}.star{position:absolute;color:#fff8d5;font-size:25px;animation:twinkle 3s infinite alternate}.star:nth-child(1){top:15%;left:45%}.star:nth-child(2){top:27%;left:80%;animation-delay:1s}.star:nth-child(3){top:62%;left:51%;animation-delay:2s}@keyframes twinkle{to{opacity:.35;transform:translateY(-8px) rotate(20deg)}}.sign{appearance:none;border:3px solid var(--edge);background:#f8d18e;color:var(--ink);padding:8px 13px;box-shadow:4px 4px 0 var(--edge);font:12px 'DM Mono',monospace;transition:transform .2s}.sign:hover{transform:translateY(-4px)}.sign-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}.status{position:fixed;bottom:18px;right:18px;padding:10px 14px;background:#fff9e9;border:3px solid var(--edge);box-shadow:4px 4px 0 var(--edge);font:12px 'DM Mono',monospace;z-index:40;max-width:280px}.hidden{display:none!important}code{font-size:.89em}.legal{background:#fcf6eb;border-top:3px solid var(--edge)}@media(max-width:900px){.hero-grid{grid-template-columns:1fr;min-height:unset}.hero-copy{padding:64px 0 10px}.scene{height:370px;max-width:570px;width:100%;margin:auto}.hero{min-height:unset}.split{grid-template-columns:1fr}.prgrid,.supportcards{grid-template-columns:repeat(2,1fr)}.navlinks{gap:11px}}@media(max-width:610px){.wrap{padding:0 18px}.nav{flex-wrap:wrap}.navlinks{font-size:.66rem}.hero h1{font-size:clamp(2.9rem,13vw,4.4rem)}.hero-lead{font-size:1rem}.scene{height:275px}.scene-note{bottom:13px;right:0;font-size:9px}.section{padding:60px 0}.prgrid,.supportcards,.stats{grid-template-columns:1fr}.share{grid-template-columns:1fr}.share img{width:135px;height:135px}.footer{flex-direction:column;align-items:flex-start}.cat{display:none}.sign-row{gap:7px}.sign{font-size:10px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.cat{display:none}}@media print{.cat,.sign-row,.floating-stars,.actions{display:none}.hero{min-height:unset}.hero-grid{min-height:unset}.scene{display:none}.section{padding:25px 0}.terrain,.payment{background:white}.prgrid{grid-template-columns:repeat(2,1fr)}}
-</style></head><body>
-<div class="cat" id="cat" aria-hidden="true"><svg viewBox="0 0 32 32"><path fill="#34334c" d="M5 5h5v4h2V7h8v2h2V5h5v12h-2v7h-4v3H10v-3H6v-7H5z"/><path fill="#f2c991" d="M7 8h2v4h5V9h6v3h5V8h1v9h-2v6h-4v2H11v-2H7v-6H6V8z"/><path fill="#e99d96" d="M8 8h1v2H8zm16 0h1v2h-1z"/><path fill="#34334c" d="M10 16h3v3h-3zm10 0h3v3h-3zm-5 4h3v2h-3z"/><path fill="#e88b8e" d="M8 20h3v2H8zm14 0h3v2h-3z"/></svg></div>
-<div class="wrap"><header class="nav"><a class="brand" href="#top"><svg class="mini-sprite" viewBox="0 0 16 16" aria-hidden="true"><path fill="#34334c" d="M5 0h6v3h3v3h2v7h-3v3H3v-3H0V6h2V3h3z"/><path fill="#e79b70" d="M5 3h6v3h2v7H3V6h2z"/><path fill="#fff5d7" d="M5 7h6v2H5z"/></svg> ABHINAV <span style="opacity:.62">/ SIDE QUEST 001</span></a><nav class="navlinks"><a href="#work">QUEST LOG</a><a href="#hardware">EQUIPMENT</a><a href="#support">HELP OUT ↗</a></nav></header></div>
-<main id="top"><section class="hero"><div class="floating-stars" aria-hidden="true"><span class="star">✦</span><span class="star">✧</span><span class="star">✦</span></div><div class="wrap hero-grid"><div class="hero-copy"><div class="eyebrow"><span>✦ A VERY REAL SIDE QUEST ✦</span></div><h1>My laptop<br>is at <span style="color:#bd5d63">1 HP.</span></h1><p class="hero-lead">Hey, I'm Abhinav. I contribute to the Rust compiler—mostly around reproducible builds, bootstrap and compiler testing. My laptop is falling apart. I'm looking for help getting dependable hardware so I can keep doing the work I love.</p><div class="actions"><a class="pixel-btn" href="#support">SUPPORT THE QUEST ↓</a><a class="pixel-btn alt" href="#work">SEE MY WORK →</a></div><div class="sign-row"><button class="sign" data-go="work">★ view quest log</button><button class="sign" data-go="hardware">▣ equipment status</button><button class="sign" data-go="support">♥ help / share</button></div></div><div class="scene" aria-label="Original pixel-art scene of a developer at a laptop in a grassy world"><svg viewBox="0 0 420 450" role="img" aria-label="Pixel-art character with laptop and trees"><g shape-rendering="crispEdges"><path fill="#719d7e" d="M0 340h420v110H0z"/><path fill="#92c18d" d="M0 350h420v100H0z"/><path fill="#e9d49e" d="M100 355h220v95H100z"/><path fill="#d8bc82" d="M118 355h185v95H118z"/><path fill="#5b8b71" d="M7 265h84v90H7zm325-15h77v105h-77z"/><path fill="#4b796d" d="M20 215h56v125H20zm322-18h56v133h-56z"/><path fill="#89c386" d="M4 232h85v70H4zm325-17h85v85h-85z"/><path fill="#b5d98f" d="M19 222h57v42H19zm323-20h59v48h-59z"/><path fill="#7c605e" d="M43 304h20v50H43zm310-15h19v66h-19z"/><path fill="#34334c" d="M162 253h109v94H162z"/><path fill="#dd987a" d="M169 259h95v82h-95z"/><path fill="#34334c" d="M165 207h101v54H165z"/><path fill="#504c61" d="M177 198h78v58h-78z"/><path fill="#e5b391" d="M181 244h71v40h-71z"/><path fill="#34334c" d="M173 206h90v33h-90z"/><path fill="#695b65" d="M181 214h74v33h-74z"/><path fill="#34334c" d="M184 192h66v17h-66z"/><path fill="#453e59" d="M193 183h51v23h-51z"/><path fill="#edbd8f" d="M195 235h44v20h-44z"/><path fill="#34334c" d="M130 277h171v64H130z"/><path fill="#7b9a9e" d="M138 283h155v49H138z"/><path fill="#9bd1cb" d="M145 289h141v34H145z"/><path fill="#34334c" d="M112 332h206v14H112z"/><path fill="#7b706f" d="M126 338h181v8H126z"/><path fill="#f8ebc0" d="M163 300h37v5h-37zm0 11h81v5h-81z"/><path fill="#e89188" d="M235 303h30v6h-30z"/><path fill="#fff6d9" d="M98 375h9v7h-9zm232 7h8v8h-8zm-49-12h6v7h-6z"/><path fill="#5e9a79" d="M47 366h12v12H47zm307 0h12v12h-12z"/><path fill="#e28a86" d="M73 363h10v10H73zm289 27h10v10h-10z"/><path fill="#34334c" d="M100 113h218v71H100z"/><path fill="#fff9e9" d="M106 119h206v59H106z"/><path fill="#f2ca70" d="M100 113h218v13H100z"/></g><text x="209" y="144" fill="#34334c" text-anchor="middle" font-size="12" font-weight="700" font-family="monospace">COMPILING...</text><text x="209" y="160" fill="#bf6565" text-anchor="middle" font-size="11" font-family="monospace">hardware HP: 01/100</text></svg><div class="scene-note">↳ current setup (dramatic recreation)</div></div></div><div class="ground" aria-hidden="true"></div></section>
-<section class="section terrain" id="work"><div class="wrap"><div class="section-heading"><div class="label">✦ QUEST LOG / 01</div><h2>Actual commits.<br>Not just good intentions.</h2><p>I've contributed patches to <a href="https://github.com/rust-lang/rust" target="_blank" rel="noopener noreferrer">rust-lang/rust</a>. You can click through to the merged pull requests and see the changes, the reviews, and the outcomes yourself.</p></div><div class="stats"><div class="stat"><span class="big">RUSTC</span><small>Upstream contributions</small></div><div class="stat"><span class="big">REPRODUCIBILITY</span><small>My main area of investigation</small></div><div class="stat"><span class="big">OPEN SOURCE</span><small>Public, independently verifiable work</small></div></div><div class="prgrid">
-<article class="pr"><div class="chip">#151517 · MERGED</div><h3>Debug-info reproducibility on Linux</h3><p>Expanded checks for reproducible binary outputs with debug information.</p><a href="https://github.com/rust-lang/rust/pull/151517" target="_blank" rel="noopener noreferrer">READ THE PR ↗</a></article>
-<article class="pr"><div class="chip">#155935 · MERGED</div><h3>Bootstrap path remapping</h3><p>Addressed build-script output paths leaking into the build.</p><a href="https://github.com/rust-lang/rust/pull/155935" target="_blank" rel="noopener noreferrer">READ THE PR ↗</a></article>
-<article class="pr"><div class="chip">#158873 · MERGED</div><h3>MSVC reproducibility</h3><p>Added <code>/Brepro</code> handling and accompanying regression coverage.</p><a href="https://github.com/rust-lang/rust/pull/158873" target="_blank" rel="noopener noreferrer">READ THE PR ↗</a></article>
-<article class="pr"><div class="chip">#156504 · MERGED</div><h3>Windows-style path handling</h3><p>Improved handling of bootstrap paths in reproducibility work.</p><a href="https://github.com/rust-lang/rust/pull/156504" target="_blank" rel="noopener noreferrer">READ THE PR ↗</a></article>
-<article class="pr"><div class="chip">#156570 · MERGED</div><h3>Standard-library test coverage</h3><p>Extended path-remapping tests across standard-library artifacts.</p><a href="https://github.com/rust-lang/rust/pull/156570" target="_blank" rel="noopener noreferrer">READ THE PR ↗</a></article>
-<article class="pr"><div class="chip">#159673 · MERGED</div><h3>Remapping for C builds</h3><p>Forwarded debug-prefix remapping options when bootstrap invokes C tooling.</p><a href="https://github.com/rust-lang/rust/pull/159673" target="_blank" rel="noopener noreferrer">READ THE PR ↗</a></article>
-</div><p class="smallprint" style="margin-top:25px">Selected merged PRs, not a complete contribution list. This page is independent of the Rust Project and not endorsed by it.</p></div></section>
-<section class="section problem" id="hardware"><div class="wrap split"><div><div class="label">▣ EQUIPMENT / 02</div><h2>The problem isn't motivation.</h2><p>I work through tight edit–compile–inspect loops. For compiler and reproducibility investigations, being able to change one thing and test it immediately on my own machine matters. My current laptop is increasingly unable to support that workflow.</p><div class="problems"><div class="problem-item"><span class="symbol" aria-hidden="true">▥</span><div><strong>Display damage</strong><p>Large vertical artifacts, spots, and damaged pixels make day-to-day use difficult.</p></div></div><div class="problem-item"><span class="symbol" aria-hidden="true">⚡</span><div><strong>Unexpected shutdowns</strong><p>My laptop sometimes powers off during work, even when I try to keep it cool.</p></div></div><div class="problem-item"><span class="symbol" aria-hidden="true">▤</span><div><strong>Storage and RAM pressure</strong><p>Rust artifacts and WSL2 pushed storage as low as roughly 200 MB free; I ended up removing WSL2 to keep working.</p></div></div><div class="problem-item"><span class="symbol" aria-hidden="true">↻</span><div><strong>Remote CI isn't my normal dev loop</strong><p>I've used GitHub Actions extensively. It helps, but it doesn't replace rapid local experimentation.</p></div></div></div><div class="dialogue"><strong>Why no photos here?</strong> I prefer to keep hardware photos private. If you're seriously considering helping, I'm happy to share additional details and evidence directly.</div></div><div><div class="equipment"><div class="label">★ PREFERRED EQUIPMENT</div><h2 style="font-size:clamp(2rem,3vw,2.8rem)">New 14-inch MacBook Pro</h2><p>This is a considered preference, <strong>not an ultimatum or a status-symbol request</strong>. I carry my machine daily, need enough memory and storage for toolchains and build artifacts, and value active cooling for sustained work.</p><ul><li>Portable 14-inch form factor</li><li>Active cooling for longer builds</li><li>24 GB+ unified memory preferred</li><li>1 TB storage preferred</li><li>New hardware for dependable long-term ownership</li></ul><p class="note">A direct device donation, partial funding, or alternative *new* hardware proposal that genuinely fits these needs is welcome. Some reproducibility work also requires a Linux/x86-64 environment; a Mac doesn't remove that requirement.</p><a class="pixel-btn coral" href="#support">HELP WITH THE UPGRADE →</a></div><div class="dialogue">✦ <strong>Transparency:</strong> I'll confirm the exact model, quote, and any funds received before a hardware purchase. No contribution purchases influence over upstream Rust decisions.</div></div></div></section>
-<section class="section payment" id="support"><div class="wrap"><div class="section-heading"><div class="label">♥ SUPPORT / 03</div><h2>Want to help with this side quest?</h2><p>A full hardware sponsorship would be amazing. A smaller contribution, an introduction, or simply sharing this page also helps. I'm an independent contributor; this is not an official Rust or Rust Foundation fundraising campaign.</p></div><div class="supportcards"><article class="supportcard"><div class="tag">01 / INDIA</div><h3>UPI / Google Pay</h3><p>For contributions within India. Once I add my receiving UPI ID, this card can provide a direct link or payment QR.</p><div class="detail" id="upi-display">Not configured yet</div><button class="copy" disabled id="upi-copy" type="button">COPY UPI ID</button></article><article class="supportcard"><div class="tag">02 / GLOBAL</div><h3>Solana / USDC</h3><p>For supporters who prefer a wallet transfer. USDC must be sent on the <strong>Solana network</strong>, not another chain.</p><div class="detail" id="sol-display">Not configured yet</div><button class="copy" disabled id="sol-copy" type="button">COPY ADDRESS</button><p class="smallprint">Always verify the address and network before transferring. Never share a wallet seed phrase or private key.</p></article><article class="supportcard"><div class="tag">03 / ETHEREUM</div><h3>ETH / Ethereum</h3><p>For ETH transfers on <strong>Ethereum mainnet only</strong>. Check the network before sending; other EVM networks are not implied.</p><div class="detail" id="eth-display">Not configured yet</div><button class="copy" disabled id="eth-copy" type="button">COPY ETH ADDRESS</button><p class="smallprint">This public receiving address should be confirmed against the Phantom Receive screen.</p></article><article class="supportcard"><div class="tag">04 / NOT ABOUT MONEY</div><h3>Hardware or introductions</h3><p>Have a new developer laptop to sponsor, a hardware grant to suggest, or know someone who could help? I'd love to hear from you.</p><a class="pixel-btn alt" href="https://github.com/paradoxicalguy" target="_blank" rel="noopener noreferrer">CONTACT VIA GITHUB ↗</a><p class="smallprint">Or share this page with someone who might know a route.</p></article></div><div class="questbox"><strong>How this works:</strong> UPI remains disabled until I add a public receiving ID. Solana and Ethereum receiving addresses are configured, but should be verified in Phantom before publication. I'll publish a final hardware quote and a transparent funding status. If the goal changes or isn't reached, I'll explain how contributions will be handled before taking funds. No photos of my damaged laptop are posted publicly.</div><div class="share"><div><div class="label">✦ PASS THE MAP ALONG</div><h3>Found me from a QR code?</h3><p>Thanks for stopping by. You don't need to know me personally to verify the linked contributions. If you can't help financially, sharing the page with someone who works in developer tools or open source is genuinely useful.</p><button type="button" class="pixel-btn" id="share-button">COPY PAGE LINK ↗</button></div><img src="qr-support.png" alt="QR code leading to this hardware support page"></div><p class="smallprint" style="margin-top:25px">.</p></div></section></main>
-<footer class="legal"><div class="wrap footer"><span>© Abhinav · An independent, human-sized side quest. Not affiliated with or endorsed by the Rust Project.</span><span><a href="https://github.com/paradoxicalguy" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#top">Back to start ↑</a></span></div></footer><div class="status hidden" id="status" role="status" aria-live="polite"></div>
+:root{
+  --ink:#2b2b3a;
+  --paper:#fdf8e8;
+  --paper-2:#f3e9c9;
+  --grass:#2e6b3a;
+  --grass-2:#2a6335;
+  --sky:#8fd3e8;
+  --hp-red:#d9473b;
+  --hp-amber:#e9963a;
+  --hp-green:#3fae5c;
+  --sun:#f2d44a;
+  --display:"Press Start 2P", ui-monospace, "Courier New", monospace;
+  --body:"Pixelify Sans", "Trebuchet MS", system-ui, sans-serif;
+  --code:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background:repeating-linear-gradient(0deg,var(--grass) 0 16px,var(--grass-2) 16px 32px);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:19px;
+  line-height:1.55;
+}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--sun);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--paper);padding:8px 12px;border:3px solid var(--ink);z-index:100}
+.skip:focus{left:8px}
+
+/* top bar */
+.bar{
+  position:sticky;top:0;z-index:30;
+  background:var(--ink);color:var(--paper);
+  border-bottom:4px solid #000;
+}
+.bar-in{
+  max-width:960px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.bar .name{font-family:var(--display);font-size:12px;text-decoration:none;color:var(--paper)}
+.bar nav{display:flex;gap:18px;flex-wrap:wrap}
+.bar nav a{text-decoration:none;font-size:17px;padding:2px 4px;color:var(--paper)}
+.bar nav a:hover{background:var(--sun);color:var(--ink)}
+
+main{max-width:960px;margin:0 auto;padding:24px 16px 56px}
+
+/* scene */
+.scene-wrap{border:4px solid var(--ink);background:var(--ink);box-shadow:6px 6px 0 rgba(0,0,0,.35)}
+#scene{display:block;width:100%;height:auto;aspect-ratio:16/9;image-rendering:pixelated;image-rendering:crisp-edges}
+
+/* dialog box */
+.box{
+  background:var(--paper);
+  border:4px solid var(--ink);
+  box-shadow:inset 0 0 0 4px var(--paper-2),6px 6px 0 rgba(0,0,0,.35);
+  padding:24px 24px 26px;
+}
+.hero-box{margin:22px 0 0;position:relative}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.5;margin:0 0 16px}
+h1{font-size:clamp(18px,3.6vw,30px)}
+h2{font-size:clamp(14px,2.4vw,18px)}
+p{margin:0 0 14px;max-width:64ch}
+.lede{font-size:21px}
+
+/* hp */
+.hp{display:flex;align-items:center;gap:12px;margin:18px 0 20px;max-width:440px}
+.hp-label{font-family:var(--display);font-size:11px;white-space:nowrap}
+.hp-track{flex:1;height:18px;border:3px solid var(--ink);background:#fff;padding:2px}
+.hp-fill{height:100%;width:100%;background:var(--hp-green)}
+.hp-fill.low{animation:blink 1s steps(2,jump-none) infinite}
+.hp-num{font-family:var(--display);font-size:11px;min-width:7ch;text-align:right}
+@keyframes blink{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.hp-fill.low{animation:none}}
+
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{
+  display:inline-block;text-decoration:none;
+  font-family:var(--display);font-size:12px;line-height:1.4;
+  padding:12px 16px;
+  background:var(--sun);color:var(--ink);
+  border:4px solid var(--ink);box-shadow:0 5px 0 var(--ink);
+  cursor:pointer;
+}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--ink)}
+.btn:active{transform:translateY(5px);box-shadow:0 0 0 var(--ink)}
+.btn.alt{background:var(--paper)}
+.hint{margin:18px 0 0;font-size:16px;opacity:.75}
+
+section{margin-top:36px;scroll-margin-top:72px}
+
+/* work log */
+.log{list-style:none;margin:18px 0 12px;padding:0;border-top:3px solid var(--ink)}
+.log li{border-bottom:3px solid var(--ink)}
+.log a{
+  display:grid;grid-template-columns:auto 1fr;gap:4px 14px;
+  padding:12px 10px;text-decoration:none;position:relative;
+}
+.log a:hover{background:var(--sun)}
+.log a:hover .num::before{content:"\25B6\00a0"}
+.log .num{font-family:var(--display);font-size:11px;padding-top:5px;white-space:nowrap;color:#8a2e25}
+.log .num::before{content:"\00a0\00a0"}
+.log .t{overflow-wrap:anywhere}
+.more{font-size:17px}
+
+/* stats */
+.sheet{margin:18px 0 22px;border:3px solid var(--ink);background:#fff}
+.sheet dl{margin:0;display:grid;grid-template-columns:minmax(110px,170px) 1fr}
+.sheet dt,.sheet dd{margin:0;padding:10px 14px;border-bottom:3px solid var(--ink)}
+.sheet dt{font-weight:600;background:var(--paper-2);border-right:3px solid var(--ink)}
+.sheet dt:last-of-type,.sheet dd:last-of-type{border-bottom:0}
+.need{background:var(--paper-2);border:3px dashed var(--ink);padding:14px 16px;max-width:none}
+
+/* tiers */
+.tiers{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 8px}
+.tier{
+  text-align:center;text-decoration:none;
+  font-family:var(--display);font-size:15px;
+  padding:18px 6px;background:var(--sun);
+  border:4px solid var(--ink);box-shadow:0 5px 0 var(--ink);
+}
+.tier:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--ink)}
+.small{font-size:16px;opacity:.8}
+.wallets{margin-top:24px;border-top:3px solid var(--ink);padding-top:20px}
+.wallets h3{font-family:var(--display);font-weight:400;font-size:12px;line-height:1.6;margin:0 0 12px}
+.addr{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin:0 0 14px}
+.addr .lbl{grid-column:1/-1;font-weight:600}
+.addr code{
+  font-family:var(--code);font-size:13px;background:#fff;border:3px solid var(--ink);
+  padding:8px 10px;overflow-wrap:anywhere;line-height:1.35
+}
+.copy{
+  font-family:var(--display);font-size:10px;padding:12px 12px;background:var(--paper);
+  border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink);cursor:pointer;color:var(--ink)
+}
+.copy:hover{background:var(--sun)}
+.copy:active{transform:translateY(4px);box-shadow:none}
+.share{margin-top:22px}
+
+footer{max-width:960px;margin:0 auto;padding:0 16px 48px;color:var(--paper);font-size:16px}
+footer a{color:var(--paper)}
+footer p{max-width:70ch}
+
+/* cat follower */
+#cat{
+  position:fixed;left:0;top:0;width:64px;height:48px;
+  image-rendering:pixelated;image-rendering:crisp-edges;
+  pointer-events:none;z-index:40;will-change:transform;display:none
+}
+body.cat-on #cat{display:block}
+
+@media (max-width:720px){
+  body{font-size:18px}
+  .box{padding:20px 16px 22px}
+  .hero-box{margin:18px 0 0}
+  .lede{font-size:19px}
+  .tiers{grid-template-columns:repeat(3,1fr)}
+  .sheet dl{grid-template-columns:1fr}
+  .sheet dt{border-right:0;border-bottom:0;padding-bottom:2px}
+  .addr{grid-template-columns:1fr}
+  .bar nav{gap:8px}
+  .bar nav a{font-size:16px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">skip to the work</a>
+<canvas id="cat" width="16" height="12" aria-hidden="true"></canvas>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="name" href="#top">abhinav</a>
+    <nav aria-label="sections">
+      <a href="#work">work</a>
+      <a href="#machine">machine</a>
+      <a href="#help">help</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="scene-wrap">
+    <canvas id="scene" width="320" height="180" role="img"
+      aria-label="Pixel art: a developer standing next to a smoking laptop on a picnic table, with trees and a dirt path."></canvas>
+  </div>
+
+  <div class="box hero-box">
+    <h1>my laptop is at 1 hp.</h1>
+    <p class="lede">i'm abhinav, a student in mumbai who contributes to the rust compiler. 17 merged prs across rust-lang, mostly reproducible builds and bootstrap. my laptop now shuts down in the middle of builds, so this page is how you can help me replace it.</p>
+    <div class="hp" role="img" aria-label="laptop health: 1 out of 100">
+      <span class="hp-label">laptop hp</span>
+      <div class="hp-track"><div class="hp-fill" id="hpfill"></div></div>
+      <span class="hp-num" id="hpnum">100/100</span>
+    </div>
+    <div class="btns">
+      <a class="btn" href="#help">help replace it</a>
+      <a class="btn alt" href="#work">see the work</a>
+    </div>
+    <p class="hint" id="cathint" hidden>move your mouse. there's a cat.</p>
+  </div>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="box">
+      <h2 id="work-h">recent work</h2>
+      <p>14 merged prs in rust-lang/rust since december 2025, plus merged work in cargo, cc-rs and the rust gsoc repo. here are some of the compiler ones.</p>
+      <ul class="log">
+        <li><a href="https://github.com/rust-lang/rust/pull/151517"><span class="num">#151517</span><span class="t">enable reproducible binary builds with debuginfo on linux</span></a></li>
+        <li><a href="https://github.com/rust-lang/rust/pull/155935"><span class="num">#155935</span><span class="t">remap OUT_DIR paths to fix build script path leakage in crate metadata</span></a></li>
+        <li><a href="https://github.com/rust-lang/rust/pull/158873"><span class="num">#158873</span><span class="t">apply /Brepro in bootstrap on msvc and add a run-make test</span></a></li>
+        <li><a href="https://github.com/rust-lang/rust/pull/156504"><span class="num">#156504</span><span class="t">bootstrap: remap windows-style OUT_DIR paths</span></a></li>
+        <li><a href="https://github.com/rust-lang/rust/pull/156570"><span class="num">#156570</span><span class="t">tests: extend remap-path-prefix-std to all stdlib rlibs</span></a></li>
+        <li><a href="https://github.com/rust-lang/rust/pull/159673"><span class="num">#159673</span><span class="t">bootstrap: forward -fdebug-prefix-map when using cc</span></a></li>
+      </ul>
+      <p class="more"><a href="https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy">all my prs on github</a></p>
+    </div>
+  </section>
+
+  <section id="machine" aria-labelledby="machine-h">
+    <div class="box">
+      <h2 id="machine-h">the machine</h2>
+      <p>an hp pavilion 14 (i7-1165g7, 16 gb ram, 512 gb ssd) that has carried rustc builds for months and is running out of road.</p>
+      <div class="sheet">
+        <dl>
+          <dt>display</dt><dd>damaged: black lines and dead pixels</dd>
+          <dt>thermals</dt><dd>overheats and shuts down in the middle of builds</dd>
+          <dt>storage</dt><dd>has dropped to about 200 mb free while building</dd>
+          <dt>builds</dt><dd>rustc only runs at -j1 or -j2 before it hangs</dd>
+          <dt>battery</dt><dd>worn</dd>
+        </dl>
+      </div>
+      <p class="need">what the replacement needs: 24 to 32 gb of ram, a 1 tb ssd, and real cooling. a 14&quot; macbook pro is my first choice, but any machine with that spec gets me building again. some of my work needs linux x86-64, which i cover with ci and remote machines.</p>
+    </div>
+  </section>
+
+  <section id="help" aria-labelledby="help-h">
+    <div class="box">
+      <h2 id="help-h">help replace it</h2>
+      <p>every amount goes toward the laptop. these are one-time tiers on github sponsors.</p>
+      <div class="tiers" role="list">
+        <a class="tier" role="listitem" href="https://github.com/sponsors/paradoxicalguy" rel="noopener">$1</a>
+        <a class="tier" role="listitem" href="https://github.com/sponsors/paradoxicalguy" rel="noopener">$5</a>
+        <a class="tier" role="listitem" href="https://github.com/sponsors/paradoxicalguy" rel="noopener">$15</a>
+        <a class="tier" role="listitem" href="https://github.com/sponsors/paradoxicalguy" rel="noopener">$50</a>
+        <a class="tier" role="listitem" href="https://github.com/sponsors/paradoxicalguy" rel="noopener">$100</a>
+      </div>
+      <p class="small">you pick the tier on the next page.</p>
+
+      <div class="wallets">
+        <h3>or send crypto</h3>
+        <div class="addr">
+          <span class="lbl">solana (SOL, or USDC on the solana network)</span>
+          <code id="sol">64fRz7VPq9a1V7X8RjDhu9eL3Ju2c485X6Dr72GGDbcU</code>
+          <button class="copy" type="button" data-copy="sol">copy</button>
+        </div>
+        <div class="addr">
+          <span class="lbl">ethereum mainnet (ETH)</span>
+          <code id="eth">0xB5b40b183A20D7e2FA1600FD584A5617987e6851</code>
+          <button class="copy" type="button" data-copy="eth">copy</button>
+        </div>
+        <p class="small">check the network before you send. crypto transfers can't be undone.</p>
+      </div>
+
+      <div class="share">
+        <p>know a program or a person who helps contributors with hardware? a pointer is just as useful. you can reach me on <a href="https://github.com/paradoxicalguy">github</a>.</p>
+        <button class="btn alt" type="button" id="sharebtn">copy this page's link</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>an independent page. it isn't endorsed by or affiliated with the rust project. <a href="https://github.com/paradoxicalguy">github.com/paradoxicalguy</a></p>
+</footer>
+
 <script>
-// Configuration: add only PUBLIC receiving identifiers. NEVER a private key, seed phrase, or secret.
-const PAYMENT = { upiId: '', solanaPublicAddress: '64fRz7VPq9a1V7X8RjDhu9eL3Ju2c485X6Dr72GGDbcU', ethereumPublicAddress: '0xB5b40b183A20D7e2FA1600FD584A5617987e6851' };
-const supportUrl = 'https://paradoxicalguy.github.io/support/';
-const notice = document.getElementById('status');let hideNotice;
-function toast(message){notice.textContent=message;notice.classList.remove('hidden');clearTimeout(hideNotice);hideNotice=setTimeout(()=>notice.classList.add('hidden'),3200)}
-function copyText(t){if(navigator.clipboard?.writeText)navigator.clipboard.writeText(t).then(()=>toast('Copied to clipboard!')).catch(()=>toast('Please copy manually.'));else toast('Please copy manually.');}
-function installPayment(id,value){if(!value)return;const valid = id==='sol' ? /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(value) : id==='eth' ? /^0x[a-fA-F0-9]{40}$/.test(value) : /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+$/.test(value);if(!valid){document.getElementById(id+'-display').textContent='Invalid receiving details — check configuration';return;}document.getElementById(id+'-display').textContent=value;const btn=document.getElementById(id+'-copy');btn.disabled=false;btn.addEventListener('click',()=>copyText(value));}
-installPayment('upi',PAYMENT.upiId);installPayment('sol',PAYMENT.solanaPublicAddress);installPayment('eth',PAYMENT.ethereumPublicAddress);
-document.getElementById('share-button').addEventListener('click',()=>copyText(supportUrl));
-document.querySelectorAll('[data-go]').forEach(btn=>btn.addEventListener('click',()=>document.getElementById(btn.dataset.go)?.scrollIntoView({behavior:'smooth'})));
-// Tiny companion: pointer-following behavior is decorative and automatically disabled on touch/reduced-motion devices.
-const cat=document.getElementById('cat');const motionOK=matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(motionOK){let x=-100,y=-100,tx=-100,ty=-100,seen=false,frame=0,lastX=-100;window.addEventListener('pointermove',e=>{tx=e.clientX+14;ty=e.clientY+16;if(!seen){x=tx;y=ty;seen=true;cat.classList.add('show');}}, {passive:true});function tick(){x+=(tx-x)*.095;y+=(ty-y)*.095;cat.style.transform=`translate3d(${x}px,${y}px,0)`;if(Math.abs(tx-x)>3){cat.classList.toggle('flip',tx<lastX);if(frame++%35===0){cat.classList.remove('hop');void cat.offsetWidth;cat.classList.add('hop')}}lastX=tx;requestAnimationFrame(tick)}requestAnimationFrame(tick);}
-</script></body></html>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var coarse = window.matchMedia("(pointer: coarse)").matches;
+  var catEnabled = !reduce && !coarse;
+
+  /* ---------- palette + helpers ---------- */
+  var C = {
+    ink:"#2b2b3a", sky1:"#7fcbe3", sky2:"#a3dcee", sky3:"#c7eef7",
+    far:"#3f8a4a", grass:"#69bd5f", grass2:"#5fb356", dark:"#2e6b3a", leaf:"#6cc26a",
+    sand:"#e3c98f", sand2:"#d2b673", brown:"#7a4b2a", brown2:"#b87a46",
+    red:"#d9473b", orange:"#e9963a", orangeL:"#f5c88a", blue:"#3f6fd1",
+    jeans:"#2f3f7a", skin:"#f0b98a", hair:"#3b2a24", white:"#ffffff",
+    grey:"#9aa0b4", yellow:"#f2d44a", pink:"#f08fa0", screen:"#1c2340"
+  };
+  function R(ctx,x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(x,y,w,h);}
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+  /* ---------- cat sprite (16x12, faces right) ---------- */
+  function drawCat(ctx,ox,oy,frame){
+    var o=C.orange, l=C.orangeL, s="#c97a22";
+    R(ctx,ox+1,oy+1,1,5,o); R(ctx,ox,oy,1,3,o);               /* tail */
+    R(ctx,ox+2,oy+5,9,5,o);                                    /* body */
+    R(ctx,ox+3,oy+9,7,1,l);                                    /* belly */
+    R(ctx,ox+4,oy+5,1,2,s); R(ctx,ox+6,oy+5,1,2,s); R(ctx,ox+8,oy+5,1,2,s);
+    R(ctx,ox+10,oy+3,5,5,o);                                   /* head */
+    R(ctx,ox+10,oy+1,2,2,o); R(ctx,ox+13,oy+1,2,2,o);          /* ears */
+    R(ctx,ox+11,oy+2,1,1,C.pink); R(ctx,ox+14,oy+2,1,1,C.pink);
+    R(ctx,ox+12,oy+5,1,1,C.ink); R(ctx,ox+14,oy+5,1,1,C.ink);  /* eyes */
+    R(ctx,ox+13,oy+7,1,1,C.pink);                              /* nose */
+    var a = frame===1 ? [[3,10],[9,10]] : frame===2 ? [[4,10],[8,10]] : [[3,10],[9,10]];
+    for(var i=0;i<a.length;i++){R(ctx,ox+a[i][0],oy+a[i][1],2,2,o);}
+    if(frame===1){R(ctx,ox+6,oy+10,2,1,o);}
+    if(frame===2){R(ctx,ox+6,oy+10,2,2,o);}
+  }
+
+  /* ---------- scene ---------- */
+  var scene=document.getElementById("scene"), sctx=scene.getContext("2d");
+  var W=320,H=180;
+
+  function cloud(ctx,x,y){
+    R(ctx,x+4,y,14,4,C.white); R(ctx,x,y+3,26,5,C.white); R(ctx,x+8,y-3,10,4,C.white);
+  }
+  function tree(ctx,x,y,s){
+    R(ctx,x+5,y+12,4,7,C.brown);
+    R(ctx,x+1,y+6,12,8,C.dark); R(ctx,x+3,y+2,8,6,C.dark); R(ctx,x+5,y,4,3,C.dark);
+    R(ctx,x+3,y+5,2,2,C.leaf); R(ctx,x+7,y+8,2,2,C.leaf); R(ctx,x+5,y+2,2,1,C.leaf);
+  }
+
+  var staticLayer=document.createElement("canvas"); staticLayer.width=W; staticLayer.height=H;
+  (function buildStatic(){
+    var x=staticLayer.getContext("2d"), r=rng(7), i, j;
+    R(x,0,0,W,26,C.sky1); R(x,0,26,W,24,C.sky2); R(x,0,50,W,26,C.sky3);
+    cloud(x,30,14); cloud(x,172,26); cloud(x,262,12);
+    for(i=0;i<W;i+=12){var h=6+((i*7)%3)*4; R(x,i,76-h,12,h,C.far);}
+    R(x,0,72,W,6,C.far);
+    R(x,0,78,W,H-78,C.grass);
+    for(j=78;j<H;j+=8){for(i=((j/8)%2)*8;i<W;i+=16){R(x,i,j,8,8,C.grass2);}}
+    R(x,0,150,W,20,C.sand); R(x,0,150,W,2,C.sand2); R(x,0,168,W,2,C.sand2);
+    for(i=0;i<26;i++){R(x,Math.floor(r()*W),152+Math.floor(r()*14),2,1,C.sand2);}
+    for(i=0;i<48;i++){
+      var tx=Math.floor(r()*W), ty=84+Math.floor(r()*60);
+      if(ty>96 && ty<112 && tx>108 && tx<200){continue;}
+      R(x,tx,ty,1,2,C.dark); R(x,tx+2,ty+1,1,2,C.dark);
+    }
+    var fc=[C.white,C.yellow,C.pink];
+    for(i=0;i<16;i++){
+      var fx=Math.floor(r()*W), fy=92+Math.floor(r()*52);
+      if(fy>94 && fy<114 && fx>104 && fx<204){continue;}
+      R(x,fx,fy,2,2,fc[i%3]);
+    }
+    tree(x,18,50); tree(x,40,60); tree(x,276,48); tree(x,296,62); tree(x,252,70);
+    /* table */
+    R(x,138,106,44,4,C.brown2); R(x,138,110,44,1,C.brown);
+    R(x,142,111,4,16,C.brown); R(x,174,111,4,16,C.brown);
+    /* laptop base */
+    R(x,148,103,24,3,C.grey); R(x,148,105,24,1,C.ink);
+    /* character */
+    var cx=112, cy=92;
+    R(x,cx+3,cy,6,3,C.hair); R(x,cx+2,cy+1,1,3,C.hair); R(x,cx+9,cy+1,1,3,C.hair);
+    R(x,cx+3,cy+3,6,5,C.skin);
+    R(x,cx+4,cy+5,1,1,C.ink); R(x,cx+7,cy+5,1,1,C.ink);
+    R(x,cx+5,cy+7,2,1,"#c9795a");
+    R(x,cx+2,cy+8,8,8,C.blue); R(x,cx+0,cy+9,2,6,C.blue); R(x,cx+10,cy+9,2,6,C.blue);
+    R(x,cx+0,cy+15,2,2,C.skin); R(x,cx+10,cy+15,2,2,C.skin);
+    R(x,cx+5,cy+9,2,3,"#2f56a8");
+    R(x,cx+3,cy+16,3,6,C.jeans); R(x,cx+6,cy+16,3,6,C.jeans);
+    R(x,cx+2,cy+22,4,2,C.ink); R(x,cx+6,cy+22,4,2,C.ink);
+    /* bench stool shadow */
+    R(x,cx+1,cy+24,10,1,"rgba(0,0,0,.18)"); R(x,140,127,40,1,"rgba(0,0,0,.18)");
+  })();
+
+  function drawScene(t){
+    sctx.clearRect(0,0,W,H);
+    sctx.drawImage(staticLayer,0,0);
+    /* laptop screen */
+    var on=Math.floor(t/600)%2===0;
+    R(sctx,150,92,20,11,C.ink);
+    R(sctx,151,93,18,9,on?C.red:C.screen);
+    R(sctx,154,96,12,1,on?"#f7b3ab":"#3a4577");
+    R(sctx,154,98,8,1,on?"#f7b3ab":"#3a4577");
+    /* smoke */
+    for(var i=0;i<3;i++){
+      var ph=((t/1100)+i/3)%1;
+      var sy=90-ph*22, sx=156+i*5+Math.round(Math.sin(ph*6+i*2)*3);
+      var sz=ph<.5?3:2;
+      sctx.globalAlpha=1-ph;
+      R(sctx,sx,sy,sz,sz,C.grey);
+      sctx.globalAlpha=1;
+    }
+    /* exclamation */
+    if(on){R(sctx,138,80,2,6,C.red);R(sctx,138,88,2,2,C.red);}
+    if(!catEnabled){drawCat(sctx,222,134,0);}
+  }
+
+  if(reduce){drawScene(0);}
+  else{
+    var last=0;
+    (function loop(t){
+      if(t-last>80){drawScene(t);last=t;}
+      requestAnimationFrame(loop);
+    })(0);
+  }
+
+  /* ---------- hp bar ---------- */
+  var fill=document.getElementById("hpfill"), num=document.getElementById("hpnum");
+  function setHp(v){
+    fill.style.width=v+"%";
+    fill.style.background=v>50?"#3fae5c":v>20?"#e9963a":"#d9473b";
+    num.textContent=v+"/100";
+  }
+  if(reduce){setHp(1);fill.classList.add("low");}
+  else{
+    setHp(100);
+    var t0=null, dur=1500;
+    setTimeout(function(){
+      requestAnimationFrame(function step(ts){
+        if(t0===null){t0=ts;}
+        var p=Math.min((ts-t0)/dur,1), e=1-Math.pow(1-p,3);
+        setHp(Math.max(1,Math.round(100-99*e)));
+        if(p<1){requestAnimationFrame(step);}else{fill.classList.add("low");}
+      });
+    },500);
+  }
+
+  /* ---------- cat follower ---------- */
+  var cat=document.getElementById("cat");
+  if(catEnabled){
+    document.body.classList.add("cat-on");
+    document.getElementById("cathint").hidden=false;
+    var cctx=cat.getContext("2d");
+    var sr=scene.getBoundingClientRect();
+    var cx=sr.left+sr.width*0.7, cy=sr.top+sr.height*0.72-24;
+    var tx=cx, ty=cy, mx=null, dir=1, frame=0, ftick=0, moving=false;
+    function paint(f){cctx.clearRect(0,0,16,12);drawCat(cctx,0,0,f);}
+    paint(0);
+    window.addEventListener("pointermove",function(e){
+      if(e.pointerType!=="mouse"){return;}
+      mx=e.clientX; tx=e.clientX-70; ty=e.clientY-6;
+    },{passive:true});
+    var lastT=0;
+    (function tick(t){
+      var dx=tx-cx, dy=ty-cy, d=Math.hypot(dx,dy);
+      if(d>46){
+        var sp=Math.min(4.2,2+d/180);
+        cx+=dx/d*sp; cy+=dy/d*sp;
+        if(Math.abs(dx)>3){dir=dx>0?1:-1;}
+        if(!moving){moving=true;}
+        if(t-ftick>110){frame=frame===1?2:1;ftick=t;paint(frame);}
+      }else if(moving){
+        moving=false;frame=0;paint(0);
+        if(mx!==null){dir=(mx>cx+32)?1:-1;}
+      }
+      cat.style.transform="translate("+Math.round(cx)+"px,"+Math.round(cy)+"px) scaleX("+dir+")";
+      requestAnimationFrame(tick);
+    })(0);
+  }
+
+  /* ---------- copy buttons ---------- */
+  function copyText(text,btn,done){
+    function ok(){var old=btn.textContent;btn.textContent=done;setTimeout(function(){btn.textContent=old;},1400);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(ok,function(){fallback();});
+    }else{fallback();}
+    function fallback(){
+      var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand("copy");ok();}catch(e){}
+      document.body.removeChild(ta);
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".copy"),function(b){
+    b.addEventListener("click",function(){
+      copyText(document.getElementById(b.getAttribute("data-copy")).textContent.trim(),b,"copied");
+    });
+  });
+  var sb=document.getElementById("sharebtn");
+  sb.addEventListener("click",function(){copyText(location.href.split("#")[0],sb,"link copied");});
+})();
+</script>
+</body>
+</html>
