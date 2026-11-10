@@ -6,7 +6,7 @@
     "name": "Abhinav Srivastav",
     "email": "abhinavsrivastav25098@gmail.com",
     "phone": "",
-    "description": "I'm a BSc IT student based in Mumbai, India, and an independent contributor to the Rust compiler and toolchain. I've been contributing to rust-lang/rust since December 2025, with 14 merged pull requests as of 28 October 2026 covering reproducible builds, bootstrap, compiler fixes and regression tests. I've also contributed to the cc-rs project.\n\nMy contributions are public: https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy\n\nI intend to continue working on compiler correctness, reproducibility and related tooling, including investigating bugs, preparing fixes and contributing regression tests upstream.",
+    "description": "I'm a BSc IT student based in Mumbai, India, and an independent contributor to the Rust compiler and toolchain. I've been contributing to rust-lang/rust since December 2025, with 20 merged pull requests across whole rust-lang covering reproducible builds, bootstrap, compiler fixes and regression tests. I've also contributed to the cc-rs project.\n\nMy contributions are public: https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy\n\nI intend to continue working on compiler correctness, reproducibility and related tooling, including investigating bugs, preparing fixes and contributing regression tests upstream.",
     "webpageUrl": {
       "url": "https://github.com/paradoxicalguy"
     }
@@ -15,7 +15,7 @@
     {
       "guid": "my-rust-contributions",
       "name": "My contributions to the Rust compiler",
-      "description": "My individual contributions to rust-lang/rust, made from my fork and submitted upstream as pull requests. This is a personal contribution record, not a project I represent. My pull requests: https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy",
+      "description": "My individual contributions to rust-lang/rust, submitted upstream as pull requests. This is a personal contribution record, not a project I represent. All PRs: https://github.com/rust-lang/rust/pulls?q=is%3Apr+author%3Aparadoxicalguy\n\nMilestone work.\nMonth 3: Land active PRs including https://github.com/rust-lang/rust/pull/157914 (reproducible compiler-builtins archives on Windows), https://github.com/rust-lang/rust/pull/165202 (deterministic rlib object names), https://github.com/rust-lang/rust/pull/165006 (Reborrow impls on types with &'static mut fields), https://github.com/rust-lang/ar_archive_writer/pull/40, and a companion regression test PR for the MSVC byte-count and LTO fix.\nMonth 6: Ongoing triage and fixes for compiler crashes (ICEs) and reproducibility issues in rustc, expanding test coverage in tests/ui, and publishing a public technical write-up.",
       "webpageUrl": {
         "url": "https://paradoxicalguy.github.io"
       },
@@ -45,10 +45,10 @@
     ],
     "plans": [
       {
-        "guid": "dev-machine",
+        "guid": "rust-compiler-fellowship",
         "status": "active",
-        "name": "Replacement development laptop",
-        "description": "One-time grant of INR 100,000 as partial support toward replacing my failing development laptop. The screen is damaged, it overheats and shuts down during compiler builds, and full storage interrupts my work, so I often limit rustc to one or two jobs. A reliable machine lets me keep contributing fixes and regression tests upstream, with progress in public PRs and a short quarterly update. The replacement costs more than this. I will disclose any other funding for the same need to FOSS United.",
+        "name": "Rust Compiler & Reproducibility Fellowship",
+        "description": "Fellowship supporting ongoing upstream contributions to rust-lang/rust and toolchain components. Work over 6 months covers resolving open reproducibility and compiler PRs on Windows/MSVC and Linux, landing upstream regression tests, and a public technical write-up as detailed in the project milestones. One-time grant of INR 100,000 upfront to support ongoing contributor capacity.",
         "amount": 100000,
         "currency": "INR",
         "frequency": "one-time",
